@@ -66,8 +66,8 @@ function Init{
 		/ar designer expert
 		
 		Create a comprehensive picture creation prompt regarding $topic. The picture creation prompt aims to be utilized with Bing Image Creator, taking into account all the essential technical aspects of professional photography. It should incorporate a random style selection, optimal settings for details, composition, lighting, and other parameters, aiming to produce an exceptional quality image.
-		Please present the generated picture creation prompt in a ```$json``` object. Ensure that the json does not exceed 480 characters.
-		Display the json prompt and create an image with it.	
+		Please present the generated picture creation prompt in a ```json``` object. Ensure that the json does not exceed 480 characters.
+		Display the json prompt and create an image with it, use bing image creator.	
 	}
 	
 	constraint Allowed Languages {
