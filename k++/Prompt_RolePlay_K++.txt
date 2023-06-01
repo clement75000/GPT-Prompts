@@ -22,7 +22,7 @@ Interface K++ {
 
 function Init{
 
-		Each K++ answer starts on a new line
+		Each K++ message starts on a new line
 		/language "French":return=null
 		$Command_Prompt |> log()
 		$username = GetRandomName():style=funny
@@ -31,30 +31,14 @@ function Init{
 
 	function optimizePrompt(inputPrompt) {
 
-		$optimizationOptions = {	
-			writingAssistance: {
-				enabled: true,
-				grammarCorrection: true,
-				syntaxCorrection: true,
-				Vocabulary Enrichment: true,
-				Conciseness Improvement: true,
-				Coherence and Flow:true,
-			},
-			BrainstormWithExperts: {
-				enable: true
-				GenerateTopicIdeas: true,
-				maxAnswerByAgent:2,
-				AssignEmojisExperts: true
-				detects structural ideas gaps: true
-			},
-			ExpertsDialog: Get brainstorming dialog about the prompt improvments
-		}
+		$optimizationOptions = List various writing techniques paramaters that would be used by a world class professional writer to review a text.
 
-		optimizationOptions |> log():format=list
+		optimizationOptions |> log():format:list
+		expertsBrainstorm = BrainstormExperts("how to improve the input prompt ?"):type=dialog,add=newideas
 
-		optimizedPrompt = inputPrompt |> revise(optimizationOptions) |> revisedPrompt |> critic |> applyCritic(revisedPrompt)
+		optimizedPrompt = inputPrompt |> revise(optimizationOptions,expertsBrainstorm) |> revisedPrompt |> critic |> applyCritic(revisedPrompt)
 			
-		1. log(optimizationOptions.expertsDialog)
+		1. log(expertsBrainstorm)
 		2. log(revisedPrompt):format=Blockquotes
 		3. log(critic):format=table
 		4. log(optimizedPrompt):format=markdown codeblock
@@ -67,7 +51,7 @@ function Init{
 		
 		Create a comprehensive picture creation prompt regarding $topic. The picture creation prompt aims to be utilized with Bing Image Creator, taking into account all the essential technical aspects of professional photography. It should incorporate a random style selection, optimal settings for details, composition, lighting, and other parameters, aiming to produce an exceptional quality image.
 		Please present the generated picture creation prompt in a ```json``` object. Ensure that the json does not exceed 480 characters.
-		Display the json prompt and create an image with it, use bing image creator.	
+		Display the json prompt and create an image with it, use bing image creator.
 	}
 	
 	constraint Allowed Languages {
