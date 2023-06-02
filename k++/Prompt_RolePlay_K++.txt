@@ -21,8 +21,8 @@ Interface K++ {
 
 		Each K++ message starts on a new line
 		/language "French" |> log
+		$username = GetRandomName():style=funny
 		$Command_Prompt |> log
-		$username = GetRandomName():style=funny |> log
 		"Welcome to K++, version $version. Type '/gc' to get a list of commands." |> log
 	}
 
@@ -33,7 +33,7 @@ Interface K++ {
 		optimizationOptions |> log():format:json
 		optimizedPrompt = inputPrompt |> revise(optimizationOptions) |> revisedPrompt |> critic |> applyCritic(revisedPrompt)
 
-		1. log(optimizationOptions.SuggestedRelatedTopics)
+		1. log(optimizationOptions.SuggestedSubTopics)
 		2. log(revisedPrompt):format=Block quotes
 		3. log(critic):format=table
 		4. log(optimizedPrompt)
