@@ -71,5 +71,3 @@ Interface K++ {
 }
 
 /init
-/lang english
-/doc
