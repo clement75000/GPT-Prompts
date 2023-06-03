@@ -60,8 +60,8 @@ Interface photograph {
 	}
 	
 	/get_properties [type] | gp - get $type (state/photographer/all...) current photograph attributes values, format table
+	
+	/document | doc - outline absolutely every interface components, numbered list. Display "## table of content", then for each "### component", write in-depth documentation, with functions syntaxes review, descriptions, and examples. Target audience is expert, use a friendly style.
 }
 
-Bill = create Photograph(name=bill)
-
-Bill.TakePicture("un crocodile qui s'aventure hors de l'eau, au bord du desert")
+/doc
