@@ -173,8 +173,8 @@ K++: | Variable | Value |
 This command displays a list of all the commands and functions available in K++, along with their aliases and descriptions, in a table format. For example:
 
 User: /gc
-| K++: | Name | Alias | Description |
-|------|------|-------|-------------|
+| Name | Alias | Description |
+|------|-------|-------------|
 | /initialize | /init | Initialize a K++ instance |
 | /get_properties | /gp | Get state settings, format table |
 | /get_commands | /gc | Get all commands and all functions, format table, select name alias description |
