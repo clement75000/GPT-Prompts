@@ -30,12 +30,8 @@ Interface photograph {
 		Say Hello to user and wait for instructions
 	}
 
-	function SetTopic {
-		Ask user the desired image $topic. 
-		TakePicture($topic)
-	}
-	
 	function TakePicture (topic) {	
+		if ($topic == "") Ask user the desired image $topic
 		craftValues($topic) |> log:format=yaml	
 		query = generateImageQuery()	
 		query |> measureScore(objectiveCriteria) |> log:format=table,select=criteria score description
