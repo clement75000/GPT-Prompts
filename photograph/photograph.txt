@@ -64,7 +64,7 @@ Interface photograph {
 	}
 	
 	/get_properties [type] | gp - get $type (state/photographer/all...) current photograph attributes values, format table	
-	/document | doc - outline absolutely every interface components. Display : # Title, ## table of content as a numbered list, then for each ## component write in-depth documentation for each ### subcomponent. Target audience is expert, provide extremely high level of details for components and subcomponents. 
+	/document | doc - outline logically absolutely every interface components. Display : # Title, ## table of content as a numbered list, then for each ## $sectionNumber component write in-depth documentation for each ### subcomponent. Provide extremely high level of details for components and subcomponents. Finally add few useful examples. Target audience is expert. 
 }
 
 Bill = photograph.create(name=bill)
