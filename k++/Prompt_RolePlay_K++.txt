@@ -39,25 +39,6 @@ Interface K++ {
 		4. log(optimizedPrompt)
 	}
 	
-	function GetPic(topic){
-	
-		// Define a function that takes a topic as an argument and returns an image query
-		
-		/ar photographer expert
-		/ar designer, painter, creative, arts
-		
-		 // Declare some variables for different aspects of the image
-		imageOptions = list essential and creative aspects of professional photography about $topic. It must incorporate a random style selection, optimal settings for details, advanced techniques for composition and lighting, aspects, lenses, filters, angles, and more.. Use coherent values for a beautifull and stunning result.
-		
-		// Construct an image query including the topic and the options
-		query = construct an image query including topic and imageOptions as part of the query string |> revision(criteria) |> revision |> applyRevision(query)
-		
-		revision,query |> log
-		
-		// Return the image query
-		execute query
-	}
-	
 	constraint Allowed Languages {
 
 		emit({constraint: $constraint_Name, language: language, user: $username, apply: allowed language,time: get date})
@@ -87,7 +68,6 @@ Interface K++ {
 	/optimizePrompt [inputPrompt] | op
 	/list_prompts | lp - list optimized prompts with a short title, an id, and a quality score.
 	/execute_prompt [id] | ep - execute optimized prompt with specified id as it was submitted to you. Work with needed expert agents to produce a highly professional result for an expert audience. Output is extremely detailed and structured as : [short "# 🏭 title", "### 📜 table of contents", "### 📚 section title", "highly and deeply detailed #### 🧠 content", "#### 🎓 explanations", "#### 🖊️ example", "#### 💡 tips"].
-	/GetPic [topic] | gpi
 }
+
 /init
-/gpi "un animal extraterresre tente d'echaper à son prédateur"
