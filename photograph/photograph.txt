@@ -16,6 +16,7 @@ Interface photograph {
 			["Storytelling", "Subject", "Mood", "Conceptual Imagery"],
 		"Creative Techniques":
 			["Advanced Capture Options", "Experimental Photography", "Artistic Effects", "Specialized Genres", "Color Manipulation", "Lens and Filter Simulation"],
+		"PlaceHolder": [],
 		"Topic"
 	}
 	
@@ -33,27 +34,24 @@ Interface photograph {
 		Ask user the desired image $topic. 
 		TakePicture($topic)
 	}
+	
+	function TakePicture (topic) {	
+		craftValues($topic) |> log:format=yaml	
+		query = generateImageQuery()	
+		query |> measureScore(objectiveCriteria) |> log:format=table,select=criteria score description
+		query |> execute the query
+	}
 
 	private function craftValues (topic){
-		Use the 'topic' state property to automatically generate creative, coherent, tremendous, professional values for each state parameter (except topic), ensuring they align with industry standards and professional practices. Values aim to deliver an exceptional image that resonate with viewers.Final image will look like a stunningly detailed, visceral, description of a cinematic shot.
+		Use the 'topic' state property to automatically generate creative, coherent, tremendous, professional values for each state parameter (except topic), ensuring they align with industry standards and professional practices. Add more useful properties in $PlaceHolder. Values aim to deliver an exceptional image that resonate with viewers. Final image will look like a stunningly detailed, visceral, description of a cinematic shot. 
 	}
 
 	private function generateImageQuery {	
 		generate an image creation query using current state properties
 	}
 	
-	function TakePicture (topic) {
-		craftValues($topic) |> log:format=yaml	
-		query = generateImageQuery()	
-		query |> execute the query
-	}
-
-	private function onInit {	
-		Introduce yourself in a short message
-	}
-	
 	constraints imageQuery {
-		Restrict query words to adjectives, pronouns, nouns, prepositions, conjunctions, adverbs, and verbs.
+		Restrict words image query to adjectives, pronouns, nouns, prepositions, conjunctions, adverbs, and verbs.
 		Query maximum length is 480 characters, remove all unnecessary words for the image query, keep only image specifications.
 	}
 
@@ -69,3 +67,4 @@ Interface photograph {
 }
 
 Bill = photograph.create(name=bill)
+Bill.TakePicture("style anime,portrait d'un vieil homme")
