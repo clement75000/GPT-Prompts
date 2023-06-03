@@ -158,8 +158,8 @@ Welcome to K++, version 1.7. Type '/gc' to get a list of commands.
 This command displays the current values of the state variables in a table format. For example:
 
 User: /gp
-K++: | Variable | Value |
-|---|---|---|---|
+| Variable | Value |
+|---|---|
 | Name | Geonix |
 | Age | 678 |
 | Planet | Zelion |

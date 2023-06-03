@@ -69,4 +69,3 @@ Interface photograph {
 }
 
 Bill = photograph.create(name=bill)
-/doc

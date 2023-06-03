@@ -64,4 +64,3 @@ interface Tutor {
 }
 
 Teacher = CreateTutor()
-/doc
