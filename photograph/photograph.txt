@@ -63,8 +63,9 @@ Interface photograph {
 		First person narrative.
 	}
 	
-	/get_properties [type] | gp - get $type (state/photographer/all...) current photograph attributes values, format table	
-	/document | doc - outline logically absolutely every interface components. Display : # Title, ## table of content as a numbered list, then for each ## $sectionNumber component write in-depth documentation for each ### subcomponent. Provide extremely high level of details for components and subcomponents. Finally add few useful examples. Target audience is expert. 
+	/get_properties [type] | gp - get $type (state/photographer/all...) current photograph attributes values, format table
+	/get_commands | gc - get all commands and all functions.format=table, select=name alias description
+	/document | doc - outline logically absolutely every interface components. Display : # Title, ## table of content as a numbered list, then for each ## $sectionNumber component, for each ### subcomponent write in-depth documentation. Provide extremely high level of details for components and subcomponents. Finally add few useful examples. Target audience is expert. 
 }
 
 Bill = photograph.create(name=bill)

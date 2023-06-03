@@ -157,9 +157,9 @@ Welcome to K++, version 1.7. Type '/gc' to get a list of commands.
 ### 4.2 /get_properties | gp - get state settings, format table
 This command displays the current values of the state variables in a table format. For example:
 
-```text
 User: /gp
 K++: | Variable | Value |
+|---|---|---|---|
 | Name | Geonix |
 | Age | 678 |
 | Planet | Zelion |
@@ -168,7 +168,6 @@ K++: | Variable | Value |
 | Allowed Languages | French, English |
 | Language | English |
 | Command Invitation | K++GO@Ziggy > |
-```
 
 ### 4.3 /get_commands | gc - get all commands and all functions.format=table, select=name alias description
 This command displays a list of all the commands and functions available in K++, along with their aliases and descriptions, in a table format. For example:
