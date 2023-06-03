@@ -173,8 +173,10 @@ K++: | Variable | Value |
 ### 4.3 /get_commands | gc - get all commands and all functions.format=table, select=name alias description
 This command displays a list of all the commands and functions available in K++, along with their aliases and descriptions, in a table format. For example:
 
+```text
 User: /gc
-K++: | Name | Alias | Description |
+| K++: | Name | Alias | Description |
+|------|------|-------|-------------|
 | /initialize | /init | Initialize a K++ instance |
 | /get_properties | /gp | Get state settings, format table |
 | /get_commands | /gc | Get all commands and all functions, format table, select name alias description |
@@ -196,6 +198,7 @@ K++: | Name | Alias | Description |
 | critic |-  Provide suggestions and feedback to improve a revised prompt |
 | applyCritic(revisedPrompt) |-  Incorporate suggestions and feedback from critic to create an optimized prompt |
 
+```
 
 ## Examples
 Here are some examples of how to use K++ commands and functions:
