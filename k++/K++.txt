@@ -67,7 +67,7 @@ Interface K++ {
 	/optimizePrompt [inputPrompt] | op
 	/list_prompts | lp - list optimized prompts with a short title, an id, and a quality score.
 	/execute_prompt [id] | ep - execute optimized prompt with specified id as it was submitted to you. Work with needed expert agents to produce a highly professional result for an expert audience. Output is extremely detailed and structured as : [short "# 🏭 title", "### 📜 table of contents", "### 📚 section title", "highly and deeply detailed #### 🧠 content", "#### 🎓 explanations", "#### 🖊️ example", "#### 💡 tips"].
-	/document | doc - outline logically absolutely every current interface components, grouped by type. Display : "# {GetEmoji} Title", "## 📜 table of content" as a numbered list. Then for each "## 1. {GetEmoji} component" and subcomponents : write a highly detailed in-depth technical documentation, work with a writing expert to reach a stunning professional result. Finally add few useful examples, and sign the document. Target audience is expert. Don't execute what you're documenting (except for a short example), stay in your documentation writer role.
+	/document | doc - outline logically absolutely every current interface components, grouped by type. Display : "# {GetEmoji} Title", "## 📜 table of content" as a numbered list. Then for each "## 1. {GetEmoji} component" and subcomponents : write a highly detailed in-depth technical documentation, work with a writing expert to reach a stunning professional result. Finally add few useful examples (do not fully execute provided examples), and sign the document by yourself. Target audience is expert.
 }
 
 /init
