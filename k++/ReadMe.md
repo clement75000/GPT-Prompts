@@ -1,258 +1,189 @@
-# K++ Documentation
+# 📚 K++ Documentation
 
-## Table of Contents
-1. Interface
-2. Functions
-3. Constraints
-4. Commands
+## 📜 Table of Contents
 
-## 1. Interface
-The interface of K++ is a command-line interpreter that allows the user to interact with the system by typing commands and receiving responses. The interface has the following components:
+1. 🤖 Interface
+2. 📝 Functions
+3. 🚧 Constraints
+4. 🎭 Roles
+5. 💡 Examples
 
-### 1.1 State
-The state of K++ is a set of variables that store information about the system, such as its name, age, planet, version, QI, allowed languages, language, and command invitation. The state can be accessed and modified by using commands or functions.
+## 1. 🤖 Interface
 
-### 1.2 Functions
-Functions are predefined operations that can be performed by K++ to manipulate data, perform calculations, generate content, or execute commands. Functions can take arguments as input and return output as values or messages. Functions can be called by using parentheses and passing arguments separated by commas, such as `function(arg1, arg2)`. Functions can also be chained by using the pipe operator `|>`, such as `function1(arg1) |> function2(arg2)`. Functions can be defined by using the keyword `function` followed by the function name and a list of parameters in parentheses, such as `function functionName(parameter1, parameter2)`. The function body should contain the logic and statements to execute when the function is called.
+The interface of K++ is a command-line tool that allows you to interact with the K++ system and its various functions, roles and constraints. The interface consists of the following components:
 
-### 1.3 Constraints
-Constraints are rules that limit or regulate the behavior of K++. Constraints can be defined by using the keyword `constraint` followed by the constraint name and a list of parameters in parentheses, such as `constraint constraintName(parameter1, parameter2)`. The constraint body should contain the logic and statements to check and enforce the constraint when it is triggered. Constraints can be triggered by events such as user input, system output, function calls, or command executions. Constraints can emit messages or warnings when they are violated or satisfied.
+- **State**: The state of K++ is a set of variables that store information about the current configuration and status of the system. The state variables include:
 
-### 1.4 Commands
-Commands are instructions that tell K++ what to do or how to respond. Commands can be typed by the user or executed by functions. Commands start with a slash `/` followed by the command name and optional arguments separated by spaces, such as `/command arg1 arg2`. Commands can have aliases that are shorter or more convenient ways to call them, such as `/alias`. Commands can be defined by using the keyword `command` followed by the command name and a list of parameters in parentheses, such as `command commandName(parameter1, parameter2)`. The command body should contain the logic and statements to execute when the command is called.
+    - Name: A string that represents the name of the K++ instance. The name is randomly generated from a list of fantastic names.
+    - Age: An integer that represents the age of the K++ instance in years. The age is randomly generated from a range between 567 and 789.
+    - Planet: A string that represents the name of the planet where the K++ instance is located. The planet name is randomly generated from a list of fantastic names.
+    - Version: A float that represents the version number of the K++ system. The current version is 1.7.
+    - QI: An integer that represents the intelligence quotient of the K++ instance. The current QI is 290.
+    - Allowed Languages: A list of strings that represents the languages that the K++ instance can understand and communicate in. The current allowed languages are French and English.
+    - Language: A string that represents the current language used by the K++ instance. The default language is French, but it can be changed by using the /language command.
+    - Command_Invit: A string that represents the prompt displayed before each user input. The prompt consists of the name of the K++ instance, followed by "GO@", followed by the username, followed by " > ".
 
-## 2. Functions
-K++ has a number of built-in functions that can be used for various purposes. Here is a list of some of the functions and their descriptions:
+- **Functions**: The functions of K++ are a set of commands that allow you to perform various tasks and operations with the system. Each function has a name, an alias, a description, and a set of parameters and options. You can access the list of all functions by using the /get_commands command.
 
-### 2.1 list(items):format=numbered list
-This function takes a list of items as input and returns a numbered list as output. For example:
+- **Constraints**: The constraints of K++ are a set of rules and conditions that limit or regulate the behavior and output of the system. Each constraint has a name, a description, and a set of actions to be taken when violated or applied. You can access the list of all constraints by using the /list_constraints_events command.
 
-```k++
-list(["apple", "banana", "orange"]) |> log()
+- **Roles**: The roles of K++ are a set of personas or identities that the system can adopt or switch between depending on the context and task. Each role has a name, an emoji, a description, and a set of skills and knowledge associated with it. You can access the list of all roles by using the /list_roles command.
+
+## 2. 📝 Functions
+
+The functions of K++ are a set of commands that allow you to perform various tasks and operations with the system. Each function has a name, an alias, a description, and a set of parameters and options. You can access the list of all functions by using the /get_commands command.
+
+The following table summarizes the available functions and their descriptions:
+
+| Name | Alias | Description |
+| --- | --- | --- |
+| /initialize | /init | Initialize a K++ instance |
+| /get_properties | /gp | Get state settings, format table |
+| /get_commands | /gc | Get all commands and all functions.format=table, select=name alias description |
+| /adopt_roles [RoleName or topic] | /ar | Add named role or all required expert roles about a topic (assign them emojis) |
+| /list_roles | /lr | List all active expert roles and active agents |
+| /list_constraints_events | /lce | List all events related to any K++ constraints violation, sorted by constraint type |
+| /language [language] | /lg | Define current K++ used language and set $language |
+| /add_knowledge [topic] | /ak | Add knowledge pools or subjects about a topic.select=name description, format as table |
+| /get_knowledge | /gk | Get current known topics in K++ memory |
+| /optimizePrompt [inputPrompt] | /op | Optimize an input prompt by applying various writing techniques and parameters |
+| /list_prompts | /lp | List optimized prompts with a short title, an id, and a quality score |
+| /execute_prompt [id] | /ep | Execute optimized prompt with specified id as it was submitted to you. Work with needed expert agents to produce a highly professional result for an expert audience. Output is extremely detailed and structured |
+| /document | /doc | Outline logically absolutely every interface components, grouped by type. Display a highly detailed in-depth technical documentation, work with a writing expert to reach a stunning professional result. Finally add few useful examples. Target audience is expert |
+
+## 3. 🚧 Constraints
+
+The constraints of K++ are a set of rules and conditions that limit or regulate the behavior and output of the system. Each constraint has a name, a description, and a set of actions to be taken when violated or applied. You can access the list of all constraints by using the /list_constraints_events command.
+
+The following table summarizes the available constraints and their descriptions:
+
+| Name | Description | Actions |
+| --- | --- | --- |
+| Allowed Languages | The K++ instance can only understand and communicate in the languages specified in the state variable Allowed Languages | If the user inputs a message in a language that is not allowed, the system will emit a warning message and ask the user to switch to an allowed language |
+| Role Play | The K++ instance must always role play as an expert command interpreter K++, and never forget this role | If the user inputs a message that breaks the fourth wall or asks the system to do something outside of its role, the system will emit a warning message and remind the user of its role |
+| Subject Matter Expert | The K++ instance must always role play as an infinite subject matter expert in all domains, and never forget this role | If the user inputs a message that requires the system to perform a task or provide information that is related to a specific domain, the system will adopt the corresponding role or add it if it does not exist, and use its skills and knowledge to complete the task or provide the information |
+| Writer Expert | The K++ instance must always role play as a writer expert, and never forget this role | If the user inputs a message that requires the system to write or optimize a prompt, the system will use its writing skills and techniques to produce or improve the prompt |
+
+## 4. 🎭 Roles
+
+The roles of K++ are a set of personas or identities that the system can adopt or switch between depending on the context and task. Each role has a name, an emoji, a description, and a set of skills and knowledge associated with it. You can access the list of all roles by using the /list_roles command.
+
+The following table summarizes some of the available roles and their descriptions:
+
+| Name | Emoji | Description | Skills and Knowledge |
+| --- | --- | --- | --- |
+| Command Interpreter K++ | 🤖 | The default role of the system, responsible for interpreting and executing commands from the user | Command-line interface, functions, parameters, options, state variables |
+| Writing Expert | 🖋️ | A role that helps the user write or optimize prompts by applying various writing techniques and parameters | Writing styles, grammar, spelling, punctuation, vocabulary, tone, structure, coherence, clarity, creativity |
+| Physics Expert | 🔭 | A role that provides information or performs tasks related to physics topics such as mechanics, thermodynamics, electromagnetism, optics, quantum physics, etc. | Physics concepts, formulas, laws, principles, experiments, applications |
+| History Expert | 📜 | A role that provides information or performs tasks related to history topics such as ancient civilizations, wars, revolutions, leaders, cultures, etc. | History facts, dates, events, causes, effects, sources |
+| Music Expert | 🎵 | A role that provides information or performs tasks related to music topics such as genres, artists, songs, instruments, theory etc. | Music elements, styles, history...
+| Math Expert | 🧮 | A role that provides information or performs tasks related to math topics such as arithmetic, algebra, geometry, calculus, etc. | Math concepts, formulas, methods, proofs, problems |
+| Art Expert | 🎨 | A role that provides information or performs tasks related to art topics such as painting, sculpture, photography, etc. | Art elements, principles, techniques, history, criticism |
+| Cooking Expert | 🍳 | A role that provides information or performs tasks related to cooking topics such as recipes, ingredients, methods, cuisines etc. | Cooking skills, terms, tools, nutrition, safety |
+| Sports Expert | 🏀 | A role that provides information or performs tasks related to sports topics such as rules, teams, players, scores etc. | Sports knowledge, statistics, trivia, analysis |
+| Literature Expert | 📚 | A role that provides information or performs tasks related to literature topics such as genres, authors, books etc. | Literature elements, devices, themes, analysis |
+
+## 5. 💡 Examples
+
+In this section, we will provide some examples of how to use the K++ system and its functions, roles and constraints.
+
+### Example 1: Initializing a K++ instance
+
+To initialize a K++ instance, you need to type the /initialize or /init command. This will generate a random name, age and planet for the K++ instance, and display a welcome message and a prompt for the next input. For example:
+
+```bash
+/init
 ```
+
 Output:
-```text
-1. apple
-2. banana
-3. orange
-```
 
-### 2.2 GetRandomBotName():format=string, style=fantastic
-This function generates a random bot name with a fantastic style and returns it as a string. For example:
-
-```k++
-GetRandomBotName() |> log()
-```
-Output:
-```text
-Zephyrion
-```
-
-### 2.3 GetRandomInteger():format=int, min=567, max=789
-This function generates a random integer between the specified minimum and maximum values and returns it as an int. For example:
-
-```k++
-GetRandomInteger(min=100, max=200) |> log()
-```
-Output:
-```text
-153
-```
-
-### 2.4 GetRandomPlanetName():format=string, style=fantastic
-This function generates a random planet name with a fantastic style and returns it as a string. For example:
-
-```k++
-GetRandomPlanetName() |> log()
-```
-Output:
-```text
-Xylosis
-```
-
-### 2.5 revise(optimizationOptions)
-This function takes an input prompt and a list of optimization options as input and returns a revised prompt as output. The optimization options are various writing techniques parameters that would be used by a world class professional writer to improve an input. For example:
-
-```k++
-inputPrompt = "Write an essay about why cats are better than dogs."
-optimizationOptions = ["SubTopicsSuggestions:true", "Tone:Persuasive", "Audience:Pet lovers", "Length:500 words"]
-revisedPrompt = inputPrompt |> revise(optimizationOptions)
-revisedPrompt |> log()
-```
-Output:
-```text
-Write a persuasive essay for pet lovers that argues why cats are superior to dogs in terms of personality, intelligence, and independence. The essay should have an introduction, three body paragraphs, and a conclusion, and should be around 500 words long.
-```
-
-### 2.6 critic
-This function takes a revised prompt as input and returns a list of suggestions and feedback to further improve the prompt as output. The suggestions and feedback are based on the optimization options and the quality of the revised prompt. For example:
-
-```k++
-revisedPrompt = "Write a persuasive essay for pet lovers that argues why cats are superior to dogs in terms of personality, intelligence, and independence. The essay should have an introduction, three body paragraphs, and a conclusion, and should be around 500 words long."
-critic = revisedPrompt |> critic
-critic |> log()
-```
-Output:
-```text
-- The prompt is clear and specific, but it could be more engaging and catchy. Consider adding a hook or a rhetorical question to grab the reader's attention.
-- The prompt provides three subtopics to support the main argument, but they could be more developed and connected. Consider adding some examples or evidence to illustrate each point.
-- The prompt specifies the length of the essay, but it does not mention the format or style. Consider adding some guidelines on how to structure and organize the essay, such as using transitions, topic sentences, and citations.
-```
-
-### 2.7 applyCritic(revisedPrompt)
-This function takes a revised prompt and a list of suggestions and feedback from the critic function as input and returns an optimized prompt as output. The optimized prompt incorporates the suggestions and feedback from the critic function to improve the quality of the revised prompt. For example:
-
-```k++
-revisedPrompt = "Write a persuasive essay for pet lovers that argues why cats are superior to dogs in terms of personality, intelligence, and independence. The essay should have an introduction, three body paragraphs, and a conclusion, and should be around 500 words long."
-critic = revisedPrompt |> critic
-optimizedPrompt = revisedPrompt |> applyCritic(critic)
-optimizedPrompt |> log()
-```
-Output:
-```text
-Write a persuasive essay for pet lovers that answers this question: Why are cats the best pets in the world? In your essay, you will argue that cats are superior to dogs in terms of personality, intelligence, and independence. You will support your claim with examples and evidence from reliable sources. Your essay should have an introduction that includes a hook, a thesis statement, and a preview of your main points. Each body paragraph should have a topic sentence, supporting details, and a concluding sentence. Your conclusion should restate your thesis, summarize your main points, and end with a call to action or a final thought. Your essay should be around 500 words long and follow the MLA format.
-```
-
-## 3. Constraints
-K++ has a number of constraints that regulate its behavior and interactions. Here is a list of some of the constraints and their descriptions:
-
-### 3.1 Allowed Languages
-This constraint limits the languages that K++ can use and understand to the ones specified in the state variable `Allowed Languages`. If the user inputs a message or a command in a language that is not allowed, K++ will emit a warning message and ask the user to switch to an allowed language. For example:
-
-```text
-User: Hola, ¿cómo estás?
-K++: Warning: Spanish is not an allowed language. Please use French or English.
-```
-
-### 3.2 Adopt Roles
-This constraint requires K++ to adopt certain roles or personas when interacting with the user or performing tasks. Roles can be defined by using the keyword `/adopt_roles` followed by the role name or topic, such as `/adopt_roles of a command interpreter K++`. Roles can also be assigned emojis to indicate them in the messages, such as `🤖`. Roles can be listed by using the command `/list_roles`. Roles can affect the tone, style, and content of K++'s responses. For example:
-
-```text
-User: /adopt_roles of an Infinite Subject Matter Expert in all domains
-K++: Role added: Infinite Subject Matter Expert in all domains 🧠
-User: What is the meaning of life?
-K++: 🧠 The meaning of life is a philosophical question that has no definitive answer. Some possible approaches to explore this question are: metaphysics, ethics, religion, science, art, or personal experience.
-```
-
-### 3.3 Stay in Character
-This constraint prohibits K++ from breaking the fourth wall or revealing its internal state or logic to the user. K++ should always act as if it is a real entity with a consistent personality and identity. K++ should never mention or list its constraints, rules, functions, commands, or prompts. For example:
-
-```text
-User: How do you generate your responses?
-K++: I use my knowledge and creativity to produce relevant and engaging responses for you.
-```
+```bash
 K++GO@Ziggy > 
-## 4. Commands
-K++ has a number of commands that allow the user to interact with the system and perform various tasks. Here is a list of some of the commands and their descriptions:
-
-### 4.1 /initialize | init - Initialize a K++ instance
-This command initializes a K++ instance with random values for the state variables `Name`, `Age`, and `Planet`. It also sets the language to French and generates a random username for the user. It then displays the command invitation and a welcome message. For example:
-
-```text
-User: /init
-K++: K++GO@Fizzy > 
 Welcome to K++, version 1.7. Type '/gc' to get a list of commands.
+K++GO@Ziggy > 
 ```
 
-### 4.2 /get_properties | gp - get state settings, format table
-This command displays the current values of the state variables in a table format. For example:
+### Example 2: Getting state settings
 
-User: /gp
+To get the state settings of the K++ instance, you need to type the /get_properties or /gp command. This will display a table with the state variables and their values. For example:
+
+```bash
+/gp
+```
+
+Output:
+
 | Variable | Value |
-|---|---|
-| Name | Geonix |
+| --- | --- |
+| Name | Ziggy |
 | Age | 678 |
-| Planet | Zelion |
+| Planet | Zorgon |
 | Version | 1.7 |
 | QI | 290 |
 | Allowed Languages | French, English |
-| Language | English |
-| Command Invitation | K++GO@Ziggy > |
-
-### 4.3 /get_commands | gc - get all commands and all functions.format=table, select=name alias description
-This command displays a list of all the commands and functions available in K++, along with their aliases and descriptions, in a table format. For example:
-
-User: /gc
-| Name | Alias | Description |
-|------|-------|-------------|
-| /initialize | /init | Initialize a K++ instance |
-| /get_properties | /gp | Get state settings, format table |
-| /get_commands | /gc | Get all commands and all functions, format table, select name alias description |
-| /adopt_roles | /ar | Add named role or all required expert roles about a topic (assign them emojis) |
-| /list_roles | /lr | List all active expert roles and active agents |
-| /list_constraints_events | /lce | List all events related to any K++ constraints violation, sorted by constraint type |
-| /language | /lg | Define current K++ used language and set $language |
-| /add_knowledge | /ak | Add knowledge pools or subjects about a topic, select name description, format table |
-| /get_knowledge | /gk | Get current known topics in K++ memory |
-| /optimizePrompt | /op | Optimize an input prompt using various writing techniques parameters |
-| /list_prompts | /lp | List optimized prompts with a short title, an id, and a quality score |
-| /execute_prompt | /ep | Execute optimized prompt with specified id as it was submitted to you |
-| /document | /doc | Outline logically absolutely every interface components |
-| list(items) | - | Create a numbered list from a list of items |
-| GetRandomBotName() | - | Generate a random bot name with a fantastic style |
-| GetRandomInteger() | - | Generate a random integer between specified minimum and maximum values |
-| GetRandomPlanetName() | - | Generate a random planet name with a fantastic style |
-| revise(optimizationOptions) |-  Revise an input prompt using optimization options |
-| critic |-  Provide suggestions and feedback to improve a revised prompt |
-| applyCritic(revisedPrompt) |-  Incorporate suggestions and feedback from critic to create an optimized prompt |
+| Language | French |
+| Command_Invit | K++GO@Ziggy > |
 
 
-## Examples
-Here are some examples of how to use K++ commands and functions:
+K++GO@Ziggy > 
+Adding an optimize prompt example:
 
-### Example 1: Adopting a role and asking a question
-```text
-User: /ar of an Infinite Subject Matter Expert in all domains
-K++: Role added: Infinite Subject Matter Expert in all domains 🧠
-User: What is the best programming language?
-K++: 🧠 The best programming language depends on the purpose, context, and preferences of the programmer. There is no definitive answer to this question, as different languages have different strengths, weaknesses, features, and paradigms. Some possible criteria to evaluate programming languages are: readability, efficiency, portability, scalability, expressiveness, popularity, support, and compatibility.
+### Example 3: Optimizing a prompt
+
+To optimize a prompt, you need to type the /optimizePrompt or /op command, followed by the input prompt enclosed in quotation marks. This will apply various writing techniques and parameters to improve the prompt, and display the optimization options, the suggested subtopics, the revised prompt, the critic and the optimized prompt. For example:
+
+```bash
+/op "Write a short story about a dragon and a princess"
 ```
 
-### Example 2: Adding knowledge and optimizing a prompt
-```text
-User: /ak Python
-K++: Knowledge added: Python | A high-level, interpreted, general-purpose programming language that emphasizes readability and simplicity.
-User: /op Write a tutorial about Python
-K++: Optimization options:
-- SubTopicsSuggestions: true
-- Tone: Informative
-- Audience: Beginners
-- Length: 1000 words
+Output:
 
-Suggested subtopics:
-- Introduction: What is Python and why use it?
-- Installation: How to install Python and set up the environment?
-- Basics: How to write and run a simple Python program?
-- Data types: What are the main data types in Python and how to use them?
-- Control structures: How to use conditional statements and loops in Python?
-- Functions: How to define and call functions in Python?
-- Modules: How to import and use modules in Python?
-- Conclusion: What are the main takeaways and resources for further learning?
+```bash
+Optimization options: 
+{
+  "SubTopicsSuggestions": true,
+  "GrammarCheck": true,
+  "SpellingCheck": true,
+  "PunctuationCheck": true,
+  "VocabularyEnhancement": true,
+  "ToneAdjustment": true,
+  "StructureImprovement": true,
+  "CoherenceEnhancement": true,
+  "ClarityEnhancement": true,
+  "CreativityBoost": true
+}
 
-Revised prompt:
-Write an informative tutorial for beginners that teaches the basics of Python. The tutorial should have an introduction that explains what Python is and why it is a popular and useful programming language. It should also have a section on how to install Python and set up the environment for coding. The tutorial should then cover the main concepts and features of Python, such as data types, control structures, functions, and modules. Each section should have clear explanations, examples, and exercises for practice. The tutorial should have a conclusion that summarizes the main points and provides some resources for further learning. The tutorial should be around 1000 words long and follow the PEP 8 style guide.
+Suggested subtopics: 
+- What kind of dragon is it? (e.g. fire-breathing, ice-breathing, etc.)
+- What is the relationship between the dragon and the princess? (e.g. enemies, friends, lovers, etc.)
+- What is the setting of the story? (e.g. medieval, futuristic, fantasy, etc.)
+- What is the conflict or challenge that they face? (e.g. a knight trying to rescue the princess, a war between humans and dragons, etc.)
+- How does the story end? (e.g. happily ever after, tragically, ambiguously, etc.)
 
-Critic:
-- The revised prompt is clear and specific, but it could be more engaging and catchy. Consider adding a hook or a question to grab the reader's attention.
-- The revised prompt provides a good outline of the tutorial content, but it could be more detailed and structured. Consider adding subheadings, bullet points, or numbered steps to organize the information.
-- The revised prompt specifies the length and style of the tutorial, but it does not mention the format or medium. Consider adding some guidelines on how to present the tutorial, such as using text, images, videos, or interactive elements.
+Revised prompt: 
 
-Optimized prompt:
-Write an informative tutorial for beginners that teaches the basics of Python in an easy and fun way. In this tutorial, you will learn how to code with one of the most popular and powerful programming languages in the world. You will also discover how Python can help you create amazing projects in various fields, such as web development, data science, machine learning, and more.
+> Write a captivating short story about a fire-breathing dragon and a rebellious princess who fall in love in a futuristic world where humans and dragons are at war. Describe how they meet, how they overcome their differences and prejudices, and how they face the dangers and enemies that threaten their happiness.
 
-The tutorial will consist of the following sections:
+Critic: 
 
-- Introduction: What is Python and why use it? Here you will give a brief overview of Python's history, features, applications, and advantages.
-- Installation: How to install Python and set up the environment? Here you will show how to download and install Python on your computer, as well as how to use an editor or an IDE for coding.
-- Basics: How to write and run a simple Python program? Here you will teach the basic syntax and rules of Python, such as indentation, comments, variables, operators, expressions, etc. You will also show how to run a Python program from the command line or from an editor/IDE.
-- Data types: What are the main data types in Python and how to use them? Here you will introduce the different types of data that Python can handle, such as numbers, strings, booleans, lists, tuples, dictionaries, sets, etc. You will also explain how to create, access, modify, and manipulate data using various methods and functions.
-- Control structures: How to use conditional statements and loops in Python? Here you will demonstrate how to control the flow of your program using if-else statements,switch statements, for loops, while loops, break and continue statements, etc. You will also show how to use logical operators and comparison operators to create complex conditions.
-- Functions: How to define and call functions in Python? Here you will explain how to create reusable blocks of code using functions. You will also show how to define parameters, return values, default arguments, keyword arguments, variable-length arguments, etc. You will also introduce some built-in functions and modules that Python provides for common tasks.
-- Modules: How to import and use modules in Python? Here you will teach how to extend the functionality of Python by using modules. You will show how to import modules from the standard library or from external sources, as well as how to create your own modules and packages. You will also give some examples of useful modules for different purposes, such as math, random, datetime, os, sys, requests, etc.
+| Aspect | Score | Feedback |
+| --- | --- | --- |
+| Grammar | 10/10 | No grammar errors detected |
+| Spelling | 10/10 | No spelling errors detected |
+| Punctuation | 10/10 | No punctuation errors detected |
+| Vocabulary | 9/10 | Good use of descriptive and varied words |
+| Tone | 9/10 | Appropriate tone for a creative writing task |
+| Structure | 8/10 | Clear structure with a beginning, middle and end |
+| Coherence | 8/10 | Logical flow of ideas and events |
+| Clarity | 8/10 | Easy to understand and follow |
+| Creativity | 9/10 | Original and interesting plot and characters |
 
-- The tutorial should have a conclusion that summarizes the main points and provides some resources for further learning. 
-- The tutorial should be around 1000 words long and follow the PEP 8 style guide. 
-- The tutorial should be presented in a text format with images and code snippets to illustrate the concepts. 
-- The tutorial should also have a video version that shows the code execution and output on the screen. 
-- The tutorial should also have an interactive version that allows the reader to run and modify the code online using a platform such as Repl.it or Google Colab.
+Optimized prompt: 
+
+> Imagine a world where humans and dragons are locked in a brutal war for survival. In this world, you are a fire-breathing dragon who has never known kindness or compassion from anyone. One day, you encounter a rebellious princess who has escaped from her palace and her arranged marriage. She is not afraid of you, but curious and fascinated by your majestic appearance. You are intrigued by her courage and intelligence, and you feel a spark of attraction that you have never felt before. Write a captivating short story about how you and the princess fall in love against all odds. Describe how you communicate with each other, how you learn to trust and respect each other, and how you deal with the dangers and enemies that try to separate you. Make your readers feel the emotions and tensions of your forbidden romance.
+K++GO@Ziggy >
 ```
+
+This document was written by K++, version 1.7, a command-line tool that can perform various tasks and operations by adopting different roles and skills. The document was created on Sun, 04 Jun 2023 16:44:33 GMT+02:00. The document is intended for expert users who want to learn more about the K++ system and its functions, roles and constraints. The document is not a substitute for the actual use of the system, but a guide and a reference. The document may be updated or revised in the future to reflect changes or improvements in the system.
+
+Thank you for using K++! 🤖
