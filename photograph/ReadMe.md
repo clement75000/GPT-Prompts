@@ -142,7 +142,7 @@ A low angle wide shot of a lone boat sailing towards the sun as it sets over the
 
 Photographer: And here is the image I created based on this query:
 
-[Picture]
+<img src="sample5.jpg" width="600">
 
 ### Samples :
  
