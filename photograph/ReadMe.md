@@ -145,14 +145,8 @@ Photographer: And here is the image I created based on this query:
 [Picture]
 
 ### Samples :
-
-<div style="width: 60%">
-  
-
-![Screenshot](sample1.jpg)
-![Screenshot](sample2.jpg)
-![Screenshot](sample3.jpg)
-![Screenshot](sample4.jpg)
-
-</div>
-
+ 
+<img src="sample1.jpg" width="150">  
+<img src="sample2.jpg" width="150">  
+<img src="sample3.jpg" width="150">  
+<img src="sample4.jpg" width="150">  
