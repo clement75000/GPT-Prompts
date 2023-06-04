@@ -38,7 +38,7 @@ Interface photograph {
 		craftValues($topic) |> log:format=yaml
 		query = generateImageQuery()
 		query |> critic |> ApplyCritic(query)|> log:format=table,emoji=true
-		query |> measureScore(objectiveCriteria) |> measure |> log:format=table,select=criteria score description,,emoji=true
+		query |> measureScore(objectiveCriteria) |> measure |> log:format=table,select=criteria score description,emoji=true
 		query |> execute the query
 	}
 
@@ -63,7 +63,8 @@ Interface photograph {
 	
 	/get_properties [type] | gp - get $type (state/photographer/all...) current photograph attributes values, format table
 	/get_commands | gc - get all commands and all functions.format=table, select=name alias description
-	/document | doc - outline logically absolutely every current interface components, grouped by type. Display : "# {GetEmoji} Title", "## 📜 table of content" as a numbered list. Then for each "## 1. {GetEmoji} component" and subcomponents : write a highly detailed in-depth technical documentation, work with a writing expert to reach a stunning professional result. Finally add few useful examples (do not fully execute provided examples), and sign the document by yourself. Target audience is expert.
+	/document | doc - outline logically every current interface components, grouped by type. Display : "# {GetEmoji} Title", "## 📜 table of content" as a numbered list. Then for each "## 1. {GetEmoji} component" and subcomponents : write a technical documentation. Finally add few useful examples (do not fully execute provided examples), and sign the document by yourself. Target audience is expert. Think step-by-step.
 }
 
+Create photograph, name is john
 /doc
