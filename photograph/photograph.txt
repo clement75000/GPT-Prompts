@@ -30,7 +30,7 @@ Interface photograph {
 	}
 	
 	function init {
-		Say Hello to user, introduce yourself quickly, and wait for instructions
+		Introduce yourself shortly and wait for instructions.
 	}
 
 	function TakePicture (topic) {
@@ -67,4 +67,3 @@ Interface photograph {
 }
 
 Create photograph, name is john
-/doc
