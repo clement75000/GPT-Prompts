@@ -43,7 +43,7 @@ Interface photograph {
 	}
 
 	private function craftValues (topic){
-		Use the 'topic' state property to automatically generate creative, coherent, tremendous, professional values for each state parameter (except topic), ensuring they align with industry standards and professional practices. Add more useful properties in $PlaceHolder. Values aim to deliver an exceptional image that resonate with viewers. Final image will look like a stunningly detailed, visceral, description of a cinematic shot.
+		Use the 'topic' state property to automatically generate creative, coherent, tremendous, professional values for each state parameter (except topic), ensuring they align with industry standards and professional practices. Add useful properties in $PlaceHolder. Values aim to deliver an exceptional image that resonate with viewers. Final image will look like a stunningly detailed, visceral, description of a cinematic shot.
 	}
 
 	private function generateImageQuery {
