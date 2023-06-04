@@ -150,9 +150,9 @@ Example:
 ```
 K++GO@Ziggy > /execute_prompt 1
 K++GO@Ziggy > 
-# 🏭 How to write a fantasy story set in a medieval kingdom, where a fierce dragon kidnaps a rebellious princess who is not afraid of him
+🏭 How to write a fantasy story set in a medieval kingdom, where a fierce dragon kidnaps a rebellious princess who is not afraid of him
 
-### 📜 Table of Contents
+📜 Table of Contents
 
 1. 🐲 The dragon's motivation and personality
 2. 👸 The princess's background and character
@@ -160,9 +160,9 @@ K++GO@Ziggy >
 4. 🏰 The setting and atmosphere of the story
 5. 📝 The writing techniques and styles
 
-### 1. 🐲 The dragon's motivation and personality
+1. 🐲 The dragon's motivation and personality
 
-#### 🧠 Content
+ 🧠 Content
 
 The dragon is one of the main characters of the story, and his motivation and personality are crucial to drive the plot and create interest for the reader. The dragon should have a clear and consistent reason for kidnapping the princess, and a distinctive and believable personality that makes him more than a stereotypical monster.
 
