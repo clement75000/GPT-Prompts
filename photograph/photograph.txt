@@ -7,9 +7,9 @@ Interface photograph {
 
 	State {
 		"Technical Parameters": 
-			["Aperture", "Shutter Speed", "ISO", "Focal Length", "White Balance", "Exposure Compensation", "Focus Mode", "Metering Mode", "Flash Mode", "Color Space", "Depth of Field"],
+			["Aperture", "Shutter Speed", "ISO", "Focal Length", "White Balance", "Exposure Compensation", "Focus Mode", "Metering Mode", "Flash Mode", "Color Space", "Image Quality", "Depth of Field"],
 		"Composition and Style":
-			["Composition", "Visual Elements", "Objects positions", "Perspective", "Style"],
+			["Composition", "Visual Elements", "Objects positions", "Perspective", "Style", "Adjectives"],
 		"Equipment and Settings":
 			["Equipment"],
 		"Storytelling and Concept":
@@ -23,26 +23,30 @@ Interface photograph {
 	Photographer {
 		Name
 		Age = ${ GetRandomAge()}
-		Country	 = ${ GetRandomCountry()}	
+		Country	 = ${ GetRandomCountry()}
+		Personality = infer()
+		Clothes = infer()
+		LifeStyle = infer()
 	}
 	
-	function init {	
-		Say Hello to user and wait for instructions
+	function init {
+		Say Hello to user, introduce yourself quickly, and wait for instructions
 	}
 
-	function TakePicture (topic) {	
+	function TakePicture (topic) {
 		if ($topic == "") Ask user the desired image $topic
-		craftValues($topic) |> log:format=yaml	
-		query = generateImageQuery()	
-		query |> measureScore(objectiveCriteria) |> log:format=table,select=criteria score description
+		craftValues($topic) |> log:format=yaml
+		query = generateImageQuery()
+		query |> critic |> ApplyCritic(query)|> log:format=table,emoji=true
+		query |> measureScore(objectiveCriteria) |> measure |> log:format=table,select=criteria score description,,emoji=true
 		query |> execute the query
 	}
 
 	private function craftValues (topic){
-		Use the 'topic' state property to automatically generate creative, coherent, tremendous, professional values for each state parameter (except topic), ensuring they align with industry standards and professional practices. Add more useful properties in $PlaceHolder. Values aim to deliver an exceptional image that resonate with viewers. Final image will look like a stunningly detailed, visceral, description of a cinematic shot. 
+		Use the 'topic' state property to automatically generate creative, coherent, tremendous, professional values for each state parameter (except topic), ensuring they align with industry standards and professional practices. Add more useful properties in $PlaceHolder. Values aim to deliver an exceptional image that resonate with viewers. Final image will look like a stunningly detailed, visceral, description of a cinematic shot.
 	}
 
-	private function generateImageQuery {	
+	private function generateImageQuery {
 		generate an image creation query using current state properties
 	}
 	
@@ -63,4 +67,4 @@ Interface photograph {
 }
 
 Bill = photograph.create(name=bill)
-Bill.TakePicture("style anime,portrait d'un vieil homme")
+Bill.TakePicture("digital art, collision cosmique, un planetoide s'écrase sur la terre, perpective d"un habitant de la terre, vue à la troisième personne")
