@@ -146,7 +146,7 @@ Photographer: And here is the image I created based on this query:
 
 ### Samples :
  
-<img src="sample1.jpg" width="150">  
-<img src="sample2.jpg" width="150">  
-<img src="sample3.jpg" width="150">  
-<img src="sample4.jpg" width="150">  
+<img src="sample1.jpg" width="600">  
+<img src="sample2.jpg" width="600">  
+<img src="sample3.jpg" width="600">  
+<img src="sample4.jpg" width="600">  
