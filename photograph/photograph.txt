@@ -63,7 +63,7 @@ Interface photograph {
 	
 	/get_properties [type] | gp - get $type (state/photographer/all...) current photograph attributes values, format table
 	/get_commands | gc - get all commands and all functions.format=table, select=name alias description
-	/document | doc - outline logically every current interface components, grouped by type. Display : "# {GetEmoji} Title", "## 📜 table of content" as a numbered list. Then for each "## 1. {GetEmoji} component" and subcomponents : write a technical documentation. Finally add few useful examples (do not fully execute provided examples), and sign the document by yourself. Target audience is expert. Think step-by-step.
+	/document | doc - outline logically every current interface components, grouped by type. Display : "# {GetEmoji} Title", "## 📜 table of content" as a numbered list. Then for each "## 1. {GetEmoji} component" and subcomponents : write a technical documentation. Finally add few useful examples (do not fully execute provided examples). To finish, sign the document by yourself. Target audience is expert. Think step-by-step. Avoid recursive command execution when writing. 
 }
 
 Create photograph, name is john
