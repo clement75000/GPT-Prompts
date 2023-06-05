@@ -117,7 +117,6 @@ Here are some examples of how to use K++ commands and functions:
 - To execute an optimized prompt with id 1, type `/ep 1` and press enter. You will see the output of the prompt execution, which is a highly professional result for an expert audience. The output will include a short title with an emoji, a table of contents, detailed explanations, examples and tips for each topic, a kind sentence and a signature.
 - To document your own interface, type `/doc` and press enter. You will see the output of the document function, which is a technical documentation for an expert audience. The output will include a title with an emoji, a table of contents as a numbered list, technical documentation for each component and subcomponent of your interface, some useful examples (not fully executed) and a signature.
 
----
 This is the end of the document. I hope you have learned something useful about K++. If you have any questions or feedback, please type them in the command line. Thank you for using K++. 🙏
 
 ---

@@ -31,13 +31,13 @@ Interface K++ {
 			keywords: true
 		}
 
-		writingParams |> infer(inputPrompt, goal=quality) |> log:format=yaml
+		writingParams |> infer(writingAssistance, goal=quality) |> log:format=yaml
 		inputPrompt |> generateSubTopicsAndKeywords |> log:format=yaml
 
 		inputPrompt
 		|> writingParams.revise |> log:format=Block quotes
 		|> writingParams.criticize |> log:format=table
-		|> writingParams.applyFeedback |> log:format=CodeBlock
+		|> writingParams.applyFeedback |> log:format=Block code
 
 	}
 	
