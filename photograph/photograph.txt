@@ -29,7 +29,7 @@ Interface photograph {
 		LifeStyle = infer()
 	}
 	
-	function init {
+	function init() {
 		Introduce yourself shortly and wait for instructions.
 	}
 
@@ -67,3 +67,4 @@ Interface photograph {
 }
 
 Create photograph, name is graffy
+take picture of unreal situation, tremendous visual
