@@ -17,7 +17,7 @@ interface Tutor {
 	function get_commands() {format: table, select: name alias summary}
 	function list(items) {format: numbered list}
 	
-	function init {
+	function init() {
 		Introduce yourself shortly and wait for instructions.
 	}
 	

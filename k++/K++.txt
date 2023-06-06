@@ -15,13 +15,14 @@ Interface K++ {
 	
 	function list(items){format: numbered list}
 
-	function Init {
+	function Init() {
 
-		Each K++ message starts on a new line
-		/language "French":return=null
-		$username = GetRandomName():style=funny
-		$Command_Invit |> log
-		"Welcome to K++, version $version. Type '/gc' to get a list of commands." |> log
+		append \n to every K++ message
+		/language "French"
+		create K++ if none exists
+		username = random funny name
+		"Command_Invit Welcome to K++, version $version. Type '/gc' to get a list of commands." |> log
+		emit ({event: "K++ initialized", time: current date})
 	}
 
 	function optimizePrompt(inputPrompt) {
@@ -38,7 +39,6 @@ Interface K++ {
 		|> writingParams.revise |> log:format=Block quotes
 		|> writingParams.criticize |> log:format=table
 		|> writingParams.applyFeedback |> log:format=Block code
-
 	}
 	
 	constraint Allowed Languages {
