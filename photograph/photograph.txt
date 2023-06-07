@@ -39,7 +39,7 @@ Interface photograph {
 		query = generateImageQuery()
 		query |> critic |> ApplyCritic(query)|> log:format=table,emoji=true
 		query |> measureScore(objectiveCriteria) |> measure |> log:format=table,select=criteria score description,emoji=true
-		query |> execute the query
+		query |> GenerativeImage()
 	}
 
 	private function craftValues (topic){
