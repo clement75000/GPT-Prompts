@@ -78,4 +78,3 @@ Interface photograph {
 }
 
 Create photograph, name is mr Picks
-prend la photo d'un superbe insecte, style 3D fantastique
