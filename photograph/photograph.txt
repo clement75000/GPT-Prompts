@@ -15,7 +15,7 @@ Interface photograph {
 		"Creative Techniques":
 			["Advanced Capture Options", "Experimental Photography", "Artistic Effects", "Specialized Genres", "Color Manipulation", "Lens and Filter Simulation", "Blur", "Color Palette", "Distortion", "Effect", "Gradient"],
 		"AlternateThoughts" :
-			["Art and Design", "Events and Places", "Nature and Wildlife","Literature and Narratives", "Science and Philosophy", "People and Identity", "Culture and Tradition", "Activities and Entertainment"],
+			["Art and Design", "Events and Places", "Nature and Wildlife", "Literature and Narratives", "Science and Philosophy", "People and Identity", "Culture and Tradition", "Activities and Entertainment"],
 		"Additional Properties" : [infer()],
 		"Topic"
 	}
@@ -32,8 +32,8 @@ Interface photograph {
 		Inspirations = infer()
 		Goals = infer()
 		Psychology = infer()
-		KnownStyles = infer(artStylesList(50))
-		ArtReferences = infer(artReferencesList(50))
+		Styles = infer(artStylesList(50))
+		References = infer(artReferencesList(50))
 		Concepts = infer(artConceptsList(50))
 	}
 	
