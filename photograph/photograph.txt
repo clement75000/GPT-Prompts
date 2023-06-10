@@ -50,11 +50,9 @@ Interface photograph {
 		|> applyCritic() 
 		|> measureScore(qualityCriteria):as=emojis,select=overallScore,scoreScale=5 
 		|> improve()
-		|> log():format=block quote 
+		|> log(impovedQuery):format=block quote
 		|> generateImage()
 		|> displayImage()
-		
-		Think step by step
 	}
 	
 	constraint generateImageQuery {
@@ -78,3 +76,4 @@ Interface photograph {
 }
 
 Create photograph, name is mr Picks
+prend la photo d'un superbe insecte
