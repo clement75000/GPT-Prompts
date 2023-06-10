@@ -43,7 +43,7 @@ Interface photograph {
 
 	function takePicture(topic) {
 		
-		Execute step by step. Do not summarize what you're about to do. Do not ask anything to user.
+		Execute step by step. Do not ask anything to user.
 	
 		craftStateProperties($topic, $photographer)) |> $state |> log():format=yaml
 		
