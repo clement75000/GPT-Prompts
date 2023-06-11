@@ -76,4 +76,4 @@ Interface photograph {
 }
 
 Create photograph, Mr Picks
-/tp portrait d'un explorateur marin du 15e siecle
+take a picture of a volcano from its inside
