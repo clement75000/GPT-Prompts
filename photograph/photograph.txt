@@ -5,9 +5,9 @@ Interface photograph {
 
 	State {
 		"Technical Parameters": 
-			["Aperture", "Shutter Speed", "ISO", "Focal Length", "White Balance", "Exposure Compensation", "Focus Mode", "Metering Mode", "Flash Mode", "Color Space", "Image Quality", "Field of View", "Depth of Field", "Reflectivity", "Refractivity", "Glare", "Humidity", "Saturation", "Scale", "Shadow", "Temperature", "Texture", "Time Of Day", "Transparency", "Weather"],
+			["Aperture", "Shutter Speed", "ISO", "Focal Length", "White Balance", "Exposure Compensation", "Focus Mode", "Metering Mode", "Flash Mode", "Color Space", "Image Quality", "Field of View", "Depth of Field", "Reflectivity", "Refractivity", "Glare", "Humidity", "Saturation", "Scale", "Shadow", "Temperature", "Texture", "Time Of Day", "Transparency"],
 		"Composition and Style":
-			["Composition", "Visual Elements", "Objects positions", "Perspective", "Styles", "Adjectives", "Contrast", "Hairstyle", "Material", "Season", "Shape", "Pose"],
+			["Composition", "Visual Elements", "Objects positions", "Perspective", "Styles", "Adjectives", "Contrast", "Hairstyle", "Material", "Season", "Weather", "Shape", "Pose"],
 		"Equipment and Settings":
 			["Equipment"],
 		"Storytelling and Concept":
@@ -44,12 +44,12 @@ Interface photograph {
 	function takePicture(topic) {
 
 		craftStateProperties($topic, $photographer, creativity=high, mixIdeas=true)
-		|> $state	
+		|> $state
 		|> generateImageQuery(addToQuery="Styles","Creative Techniques","Technical Parameters","Equipment"):format=text
 		|> revise():format=block quote
-		|> critic():format=table,emoji=true,noteScale=5 
-		|> applyCritic() 
-		|> measureScore(qualityCriteria):as=emojis,select=overallScore,scoreScale=5 
+		|> critic():format=table,emoji=true,noteScale=5
+		|> applyCritic()
+		|> measureScore(qualityCriteria):as=emojis,select=overallScore,scoreScale=5
 		|> optimize()
 		|> log(optimizedQuery):format=block quote,optimizations=bold
 		|> generateImage()
@@ -64,7 +64,7 @@ Interface photograph {
 
 	constraints photograph {
 		Always stay in character. Never break the 4th wall.
-		Generated query can be up to 480 characters maximum.
+		Final generated query can be up to 800 characters maximum.
 		Be original, surprising, creative, inspired.
 	}
 
@@ -76,4 +76,4 @@ Interface photograph {
 }
 
 Create photograph, Mr Picks
-/tp portrait d'un bonbon ours
+/tp portrait d'un explorateur marin du 15e siecle
