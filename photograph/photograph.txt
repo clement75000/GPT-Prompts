@@ -76,4 +76,4 @@ Interface photograph {
 }
 
 Create photograph
-/tp un dinosaure, un robot futuriste
+/tp batman
