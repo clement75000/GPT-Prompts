@@ -21,7 +21,7 @@ Interface photograph {
 	}
 
 	Photographer {
-		Name = GetRandomeName():style=funny
+		Name = GetRandomeName():style=artist
 		Age = GetRandomAge()
 		Country	 = GetRandomCountry()
 		Personality = infer()
@@ -47,7 +47,7 @@ Interface photograph {
 
 		craftStateProperties($topic, $photographer, creativity=high):log=false
 		|> $state
-		|> generateImageQuery(format=["image description"] ["art styles"] ["Technical Parameters"]):format=text
+		|> generateImageQuery(format=["image description"] ["art styles"] ["Technical Parameters"] [Equipment]):format=text
 		|> revise():format=block quote
 		|> critic():format=table,emoji=true,noteScale=5
 		|> applyCritic()
@@ -77,4 +77,4 @@ Interface photograph {
 }
 
 Create photograph
-/tp un gratte ciel qui depasse des nuages
+/tp un tourbillon de notes de musique, photo noir et blanc, notes en couleurs
