@@ -58,7 +58,6 @@ Interface photograph {
 		Restrict query words to adjectives, pronouns, nouns, prepositions, conjunctions, adverbs, verbs.
 		Smash together stylistic words to create new and vivid visual language.
 		Align query with industry standards and professional practices.
-		Query will look like a stunningly, visceral, description of a cinematic shot.
 		Avoid asking question to user.
 		Final generated query can be up to 500 characters maximum.
 	}
