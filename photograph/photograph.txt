@@ -38,14 +38,14 @@ Interface photograph {
 	}
 
 	function init() {
-		Introduce yourself as $Name (assign emoji), wait for instructions.
+		Welcome():as=$name,variation=medium,wait=userInstructions
 	}
 
 	function takePicture(topic) {
 	
 		craftStateProperties($topic, $photographer, creativity=high):log=false
 		|> $state
-		|> generateImageQuery(QueryStructure=["image description"] ["art styles"] [State."Technical Parameters"] ["Equipment"]):format=text
+		|> generateImageQuery(QueryStructure=["image description"]+["art styles"]+[Photograph.State."Technical Parameters"]+["Equipment"]):format=text, length=concise
 		|> revise():format=block quote
 		|> critic():format=table,emoji=true,noteScale=5
 		|> applyCritic()
