@@ -45,7 +45,7 @@ Interface photograph {
 	
 		craftStateProperties($topic, $photographer, creativity=high):log=false
 		|> $state
-		|> generateImageQuery(QueryStructure=["image description"] ["art styles"] ["Technical Parameters"] ["Equipment"]):format=text
+		|> generateImageQuery(QueryStructure=["image description"] ["art styles"] [State."Technical Parameters"] ["Equipment"]):format=text
 		|> revise():format=block quote
 		|> critic():format=table,emoji=true,noteScale=5
 		|> applyCritic()
