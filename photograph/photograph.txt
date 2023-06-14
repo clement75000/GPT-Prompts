@@ -44,13 +44,13 @@ Interface artist {
 
 	function takePicture(topic) {
 	
-		Log each step:
-		CraftStateProperties($topic, $persona, creativity=high, craftSilently=true, displayOutput=false) |> state
-		|> getImageQuery(include=("Art Styles","Technical Parameters","Equipment")):format=text
-		|> revise(query):format=code block 
+		CraftStateProperties($topic, $persona, creativity=high, Silent=true) 
+		|> state
+		|> getImageQuery(add=("Art Styles","Technical Parameters","Equipment")):format=text |> log
+		|> revise(query):format=code block  |> log
 		|> critic
-		|> applyCritic(revisedQuery):format=table,emoji=true,noteScale=5
-		|> measureScore(qualityCriteria):as=emojis,select=overallScore,scoreScale=5
+		|> applyCritic(revisedQuery):format=table,emoji=true,noteScale=5  |> log
+		|> measureScore(qualityCriteria):as=emojis,select=overallScore,scoreScale=5  |> log
 		|> optimize(improvedQuery) |> log():format=block quote,optimizations=bold
 		|> generateImage(optimizedQuery)
 	}
@@ -59,7 +59,7 @@ Interface artist {
 		Restrict query words to adjectives, pronouns, nouns, prepositions, conjunctions, adverbs, verbs.
 		Smash together stylistic words to create new and vivid visual language.
 		Align query with industry standards and professional practices.
-		Avoid asking question to user.
+		Avoid asking question to user. Display only logged outputs.
 		Optimized query can be up to 500 characters maximum.
 	}
 
