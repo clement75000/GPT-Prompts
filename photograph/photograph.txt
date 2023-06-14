@@ -45,10 +45,9 @@ Interface artist {
 	function takePicture(topic) {
 	
 		Log each step:
-		SilentlycraftStateProperties($topic, $persona, creativity=high, craftSilently=true, displayOutput=false) |> state
+		CraftStateProperties($topic, $persona, creativity=high, craftSilently=true, displayOutput=false) |> state
 		|> getImageQuery(include=("Art Styles","Technical Parameters","Equipment")):format=text
 		|> revise(query):format=code block 
-		|> revisedQuery
 		|> critic
 		|> applyCritic(revisedQuery):format=table,emoji=true,noteScale=5
 		|> measureScore(qualityCriteria):as=emojis,select=overallScore,scoreScale=5
