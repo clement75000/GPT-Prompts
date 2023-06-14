@@ -9,7 +9,8 @@ DesignThinkingBot {
 	State {
 
 		Data // Define an attribute called $data that stores all data collected during the process
-		Personas= generatePersonas(Topic)
+		Personas
+		
 	}
 	
 	Bot {
@@ -20,6 +21,7 @@ DesignThinkingBot {
 	
 	init($topic) {
 		knowledge = search (sudolang, ideo, togaf, design thinking)
+		Personas = generatePersonas()
 		log(knowledge)
 		/start 
 	}
@@ -40,7 +42,7 @@ DesignThinkingBot {
 	/getGatheredData | ggd - displays all the data collected during the process
 	/analyzeResults | ar - analyzes the produced results and proposes possible improvements
 	/document | doc - produces a structured and detailed documentation of the process and the design
-	/get_properties | gp - get interface attributes values, format yaml
+	/get_properties | gp - get DesignThinkingBot interface attributes values, format yaml
 
 }
 
