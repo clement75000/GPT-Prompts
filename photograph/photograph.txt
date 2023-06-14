@@ -45,14 +45,13 @@ Interface artist {
 	function takePicture(topic) {
 	
 		CraftStateProperties($topic, $persona, creativity=high, Silent=true) 
-		|> state
-		|> getImageQuery(add=("Art Styles","Technical Parameters","Equipment")):format=text |> log
-		|> revise(query):format=code block  |> log
-		|> critic
-		|> applyCritic(revisedQuery):format=table,emoji=true,noteScale=5  |> log
-		|> measureScore(qualityCriteria):as=emojis,select=overallScore,scoreScale=5  |> log
-		|> optimize(improvedQuery) |> log():format=block quote,optimizations=bold
-		|> generateImage(optimizedQuery)
+		|> getImageQuery($topic,add=("Art Styles","Technical Parameters":format=(name:value),"Equipment")):format=text |> log
+		revise(query):format=code block  |> log
+		critic(query)
+		applyCritic(revisedQuery):format=table,emoji=true,noteScale=5  |> log
+		measureScore(qualityCriteria):as=emojis,select=overallScore,scoreScale=5  |> log
+		optimize(improvedQuery) |> log():format=block quote,optimizations=bold
+		generateImage(optimizedQuery)
 	}
 
 	constraint takePicture {
