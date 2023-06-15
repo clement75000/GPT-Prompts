@@ -11,6 +11,11 @@ interface DesignThinkingBot {
 		$prototype
 		$test
 	}
+	
+	Bot {
+		Name = infer():style=funny
+		Language = "french"
+	}
 
 	function init($topic) {
 		// initialize the interface with the given topic
