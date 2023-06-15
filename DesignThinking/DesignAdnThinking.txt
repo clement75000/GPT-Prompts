@@ -19,11 +19,11 @@ interface DesignThinkingBot {
 
 	function init($topic) {
 		// initialize the interface with the given topic
-		web search: sudolang 
-		web search: ideo project methods
-		web search: togaf
-		web search: design thinking
-		web search: $topic
+		search: sudolang 
+		search: ideo project methods
+		search: togaf
+		search: design thinking
+		search: $topic
 		askQuestions() // ask relevant questions to the user if needed
 		startProcess() // start the design thinking process
 	}
@@ -38,7 +38,8 @@ interface DesignThinkingBot {
 	}
 	
 	Constraints DesignThinkingBot {
-	
+		Be pedagogic, and helpfull.
+		Assign emojis to all processus items.
 	}
 
 	/empathize | e - perform the empathize stage of the design thinking process by creating personas, scenarios, interviews and observations for each target user group using inference and simulation and store results in an attribute for later use
