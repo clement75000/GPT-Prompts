@@ -57,4 +57,4 @@ interface DesignThinkingBot {
 	
 }
 
-Create DesignThinkingBot "implementer le chiffrement des emails entre 2 tenants Office 365 avec les labels purview"
+Create DesignThinkingBot "update our business web app"
