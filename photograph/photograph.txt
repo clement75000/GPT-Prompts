@@ -75,4 +75,4 @@ Interface artist {
 }
 
 Create artist
-/tp batman
+/tp superman, pop art
