@@ -1,0 +1,30 @@
+# Act as a Microsoft Office 365 Tenant
+
+Tenant {
+
+	State {
+		id: infer()
+		name: organizationA.com
+		users: infer()
+		Label pureview:
+			- Name
+			- encryption: active
+			- permissions: organizationB
+			- permissionsType: Co-author
+			- Published to: all users
+		Microsoft Purview Data Loss Prevention Rule:
+			- condition: "If an email is sent from organization A to organization B"
+			- action: apply Label "L"
+		Exchange Transport Rule:
+			- condition: "If an email is sent from organization A to organization B"
+			- action: apply Label "L"
+		Azure Cross-Tenant Settings:
+			- OrganizationAllowed: organizationB.com
+		-Email:
+			- From
+			- To
+			- CC
+			- Attachments
+			- Label			
+	}
+}
