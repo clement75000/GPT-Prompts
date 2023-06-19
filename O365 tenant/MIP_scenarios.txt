@@ -1,0 +1,20 @@
+scenario,title,description,Mail From,To,Cc,Attachment,Attachment RMS Template,Mail Subject
+1,Simple email with DLP,A simple email from organizationA to organizationB with no attachment and DLP in the subject,user@organizationA,user@organizationB,,,,Test DLP
+2,Email with attachment and DLP,An email from organizationA to organizationB with an attachment and DLP in the subject,user@organizationA,user@organizationB,,true,,Test DLP
+3,Email with encrypted attachment and DLP,An email from organizationA to organizationB with an attachment that has a Top Secret RMS template and DLP in the subject,user@organizationA,user@organizationB,,true,Top Secret,Test DLP
+4,Email to multiple recipients with DLP,An email from organizationA to organizationB and organizationC with no attachment and DLP in the subject,user@organizationA,user@organizationB,user@organizationC,,,Test DLP
+5,Email to multiple recipients with attachment and DLP,An email from organizationA to organizationB and organizationC with an attachment and DLP in the subject,user@organizationA,user@organizationB,user@organizationC,true,,Test DLP
+6,Email to multiple recipients with encrypted attachment and DLP,An email from organizationA to organizationB and organizationC with an attachment that has a Top Secret RMS template and DLP in the subject,user@organizationA,user@organizationB,user@organizationC,true,Top Secret,Test DLP
+7,Simple email with OME,A simple email from organizationA to organizationB with no attachment and OME in the subject,user@organizationA,user@organizationB,,,,Test DLP
+8,Email with attachment and OME,An email from organizationA to organizationB with an attachment and OME in the subject,user@organizationanizationA,user@organizationB,,true,,Test DLP
+9,Email with encrypted attachment and OME,An email from organizationanizationA to organizationB with an attachment that has a Top Secret RMS template and OME in the subject,user@organizationA,user@organizationB,,true,Top Secret,Test DLP
+10,Email to multiple recipients with OME,An email from organizationA to organizationB and organizationC with no attachment and OME in the subject,user@organizationA,user@organizationB,user@organizationC,,,Test DLP
+11,Email to multiple recipients with attachment and OME,An email from organizationA to organizationB and organizationC with an attachment and OME in the subject,user@organizationA,user@organizationB,user@organizationC,true,,Test DLP
+12,Email to multiple recipients with encrypted attachment and OME,An email from organizationA to organizationB and organizationC with an attachment that has a Top Secret RMS template and OME in the subject,user@organizationA,user@organizationB,user@organizationC,true,Top Secret,Test DLP
+
+for each scenario {
+Display only logged commands outputs
+/se scenario 
+/cv participants:TenantA,DLP,Exchange,RmsTemplate,CrossTenantSettings,TenantB actors:userA,userB,userC title:"scenario+title" |> log():format=block code
+Confirm with user if output is correct.
+}
