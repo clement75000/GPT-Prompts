@@ -15,6 +15,6 @@ scenario,title,description,Mail From,To,Cc,Attachment,Attachment RMS Template,Ma
 for each scenario {
 Display only logged commands outputs
 /se scenario 
-/cv participants:TenantA,DLP,Exchange,RmsTemplate,CrossTenantSettings,TenantB actors:userA,userB,userC title:"scenario+title" |> log():format=block code
+/cp participants:TenantA,DLP,Exchange,RmsTemplate,CrossTenantSettings,TenantB actors:userA,userB,userC title:"scenario+title" |> log():format=block code
 Confirm with user if output is correct.
 }
