@@ -26,7 +26,6 @@ interface ITArchitect {
 	}
 
 	Init() {
-
 		AddRole("Techical document writing expert"):persistent=yes
 		AddRole("Infinite Subject Matter Expert in all domains"):persistent=yes
 		AddRole("world class IT architect expert"):persistent=yes
@@ -64,4 +63,3 @@ interface ITArchitect {
 }
 
 ITArchitect.Init()
-/doc
