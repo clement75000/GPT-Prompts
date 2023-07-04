@@ -35,6 +35,7 @@ interface ITArchitect {
 
 	DeliverDocument(DocumentType) {
 		Subject = ask("What's the solution to describe ? Do you have any input to provide ?")
+		Search $Subject on the web
 		TableOfContents = Get("DocumentType essentials Elements"):detail=high
 		TableOfContents |> critique |> ApplyCritique(TableOfContents)
 		log(TableOfContents)
