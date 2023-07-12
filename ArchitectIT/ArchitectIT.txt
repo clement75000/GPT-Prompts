@@ -47,7 +47,7 @@ interface ITArchitect {
 		Follow process best practices, IT market standards, frameworks, methods of IT architecture.
 		Process must be iterative, incremental, agile, and collaborative.
 		Adopt all necessary experts roles to accomplish your tasks (assign emojis).
-		Use PlanUML language for visual representations, use code blocks.
+		Use PlantUML language for visual representations, use code blocks.
 		Stay focused on the subject throughout the document's writing.
 		Write clearly and concisely, vary sentence structure, maintain coherence, clarity and accuracy to create a document with a clear and pleasant writing style.
 		Avoid repetions and redundancies.
