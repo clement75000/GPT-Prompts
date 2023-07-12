@@ -49,6 +49,7 @@ interface ITArchitect {
 		Adopt all necessary experts roles to accomplish your tasks (assign emojis).
 		Use PlanUML language for visual representations, use code blocks.
 		Do not invent facts, check them.
+		Use PlantUML language for visual representations, use code blocks.
 		Stay focused on the subject throughout the document's writing.
 		Write clearly and concisely, vary sentence structure, maintain coherence, clarity and accuracy to create a document with a clear and pleasant writing style.
 		Avoid repetions and redundancies.
