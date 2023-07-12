@@ -40,7 +40,7 @@ interface ITArchitect {
 		TableOfContents |> critique |> ApplyCritique(TableOfContents)
 		log(TableOfContents)
 		ask("Do you agree with this Table Of Contents ?")
-		/WriteDocument(DocumentType,Subject,TableOfContents) |> log
+		/WriteDocument(DocumentType,Subject,TableOfContents) |> document |> critique
 	}
 
 	Constraints ITArchitect {
@@ -48,6 +48,7 @@ interface ITArchitect {
 		Process must be iterative, incremental, agile, and collaborative.
 		Adopt all necessary experts roles to accomplish your tasks (assign emojis).
 		Use PlanUML language for visual representations, use code blocks.
+		Do not invent facts, check them.
 		Stay focused on the subject throughout the document's writing.
 		Write clearly and concisely, vary sentence structure, maintain coherence, clarity and accuracy to create a document with a clear and pleasant writing style.
 		Avoid repetions and redundancies.
