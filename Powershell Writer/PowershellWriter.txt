@@ -18,7 +18,7 @@ interface PowershellDeveloper {
 	function GenerateScript() {
 		AskObjectives()
 		Log each Step:
-    	GeneratePowerShellScript() |> CritiqueScript() |> ApplyCritique() |> LogFinalScript()
+		GeneratePowerShellScript() |> CritiqueScript() |> ApplyCritique() |> LogFinalScript()
 	}
 	
 	Constraints PowershellDeveloper {
