@@ -79,6 +79,6 @@ interface vTenant {
 
 CorpTenant = vTenant.init()
 
-/sendEmail from:userA@organizationA.com to:userB@organizationB.com cc:userC@organizationC.com subject:"Test DLP" Attachment:true AttachmentRmsTemplate:"Top Secret"
+/sendEmail from:userA@organizationA.com to:userB@organizationB.com cc:userC@organizationC.com subject:"Test DLP" Attachment:true AttachmentRmsTemplate:"Encrypt"
 
 /cp 1,sequence actors:userA,userB,userC participants:organizationA,"Exchange Online","Data Loss Prevention Rules","Azure RMS Service","Azure Cross-Tenant Settings",organizationB,organizationC title:infer()
