@@ -72,6 +72,7 @@ Bing
 GenerateScript()
 What are your objectives for the script?
 Create a new user in Active Directory with name, email, password, and group membership parameters.
+```
 
 📝 Writing powershell script
 
