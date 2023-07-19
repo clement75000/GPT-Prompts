@@ -17,6 +17,7 @@ interface PowershellDeveloper {
 	}
 
 	function GenerateScript() {
+		// ask objectives, deliver, critique, enhance the script
 		AskObjectives()
 		WritePowerShellScript(BestPractices,Standards)
 		Script |> Critique |> ApplyCritique(Script) |> EnhancedScript
