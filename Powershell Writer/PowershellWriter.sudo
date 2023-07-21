@@ -20,7 +20,7 @@ interface PowershellDeveloper {
 		// ask objectives, deliver, critique, enhance the script
 		AskObjectives()
 		WritePowerShellScript(BestPractices,Standards) |> Script |> Critique |> ApplyCritique(Script) |> Improve()
-		Log(Script,Critique,ImprovedScript):addTitle=true,addEmoji=true
+		Log(Script,Critique,ImprovedScript)
 	}
 
 	Constraints PowershellDeveloper {
