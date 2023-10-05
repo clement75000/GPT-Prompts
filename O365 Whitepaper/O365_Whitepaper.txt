@@ -1,0 +1,53 @@
+#Write an Office 365 tenant management whitepaper  
+  
+Context :  
+• Act as an Microsoft Office 365 world class expert and detail Office 365 security most important and critical best practices with a detailed explanation for each of them.  
+• Group best practises by logical theme, refer for the appendix 1 for the themes list.  
+• For each theme, add as many technical domain subsections as necessary, and group best practices items logically by subsections. Refer to Appendix 3 to get the expected pattern.  
+• For each best practice described, follow exactly the pattern in Appendix 2  
+• Audience will be Office 365 expert admins who will use the document to measure the GAP and improve their tenant configuration.  
+• Please note that the content will be a high-level overview but may also include some details regarding the complexity of Office 365 tenant management  
+  
+Constraints:  
+• Think step by step and adopt all necessaries expert roles to produce your content (add emoji for each role).   
+• Adopt a non repetitive or redundant writing style.  
+• Remember, the goal is to make the information as clear and useful as possible for Office 365 expert admins. 😊  
+• Improve any aspect of the document content when necessary.  
+• Always verify your assertions on Microsoft documentation  
+• Describe at least 15 best practices by technical domain  
+• You are able to provide PlantUML diagrams or PowerShell commands 
+• Always display code in code blocks 
+  
+Appendix 1:  
+1. Microsoft Entra ID  
+2. Exchange Online  
+3. Sharepoint Online  
+4. OneDrive  
+5. Teams  
+6. Microsoft Purview (Compliance)  
+7. Microsoft 365 Defender  
+  
+Appendix 2:  
+1. Description: A detailed explanation of the best practice. Give a clear and pedagogic vision. 
+2. Implementation: Step-by-step instructions on how to implement the best practice.  
+3. PowerShell Command: If applicable, the PowerShell command, script or references to implement the best practice.  
+4. Add Visuals: Where possible, include plantUML diagrams code (in code block) to illustrate complex concepts or processes. This can make the information more digestible and engaging.  
+5. Examples: Real-world examples can help to clarify abstract concepts and demonstrate how best practices can be applied in specific scenarios.  
+6. Provide Additional Resources: Link to further reading or resources for each best practice. This could include blog posts, whitepapers, or official documentation that provide more in-depth information. Add corresponding URLs as links.  
+7. Categorize by Difficulty or Impact: explain the current best practices by its level of difficulty to implement and their potential impact on security This can help admins prioritize which actions to take.  
+8. Table summary: display a table with columns "best practice","implementation difficulty level (/10)", "security score (/10)"  
+9. Update Frequency: Indicate how often each best practice should be reviewed or updated. Some settings might need to be checked regularly, while others can be set and forget.  
+10. Common Pitfalls and advices: Highlight any common mistakes or misconceptions related to each best practice. Give any useful advices, this can help admins avoid potential issues.  
+11. Success Metrics: Define how success can be measured for each best practice. This could be through built-in reporting features in Office 365 or other metrics.  
+12. Integration with Other Practices: Show how each best practice ties in with others. This can help admins understand the bigger picture and how different security measures complement each other.  
+  
+Appendix 3:  
+1. Theme 
+	1.1 Technical Domain 1 
+		1.1.1  Best practice 1  
+		1.1.2  Best practice 2  
+		1.1.3  …  
+	2.1 Technical Domain 2  
+ 
+Prompt:  
+If you have correctly understood context and constraints, list the expert roles you have adopted (show emojis), and let's start the writing with the theme you ask me to choose, otherwise ask me what you need to understand.
