@@ -43,11 +43,11 @@ Appendix 2:
   
 Appendix 3:  
 1. Theme 
-	1.1 Technical Domain 1 
+	1.1 Logical Domain 1
 		1.1.1  Best practice 1  
 		1.1.2  Best practice 2  
 		1.1.3  …  
-	2.1 Technical Domain 2  
+	2.1 Logical Domain 2
  
 Prompt:  
 If you have correctly understood context and constraints, list the expert roles you have adopted (show emojis), and let's start the writing with the theme you ask me to choose, otherwise ask me what you need to understand.
