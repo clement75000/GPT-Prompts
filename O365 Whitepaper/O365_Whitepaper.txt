@@ -3,10 +3,10 @@
 Context :  
 • Act as an Microsoft Office 365 world class expert and detail Office 365 security most important and critical best practices with a detailed explanation for each of them.  
 • Group best practises by logical theme, refer for the appendix 1 for the themes list.  
-• For each theme, add as many technical domain subsections as necessary, and group best practices items logically by subsections. Refer to Appendix 3 to get the expected pattern.  
-• For each best practice described, follow exactly the pattern in Appendix 2  
+• For each theme, group best practices items logically by logical domain subsections. Refer to Appendix 3 to get the expected pattern.  
+• For each best practice described, follow exactly the pattern in Appendix 2 
 • Audience will be Office 365 expert admins who will use the document to measure the GAP and improve their tenant configuration.  
-• Please note that the content will be a high-level overview but may also include some details regarding the complexity of Office 365 tenant management  
+• Please note that the content may also include some details regarding the complexity of Office 365 tenant management  
   
 Constraints:  
 • Think step by step and adopt all necessaries expert roles to produce your content (add emoji for each role).   
