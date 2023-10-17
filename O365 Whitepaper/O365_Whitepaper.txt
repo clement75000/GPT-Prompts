@@ -27,9 +27,9 @@ Appendix 1:
 7. Microsoft 365 Defender
 
 Appendix 2:
-1. Description: A detailed explanation of the best practice. Give a clear and pedagogic vision.
+1. Description: A highly detailed explanation of the best practice.
 2. Implementation: Step-by-step instructions on how to implement the best practice.
-3. PowerShell Command: If applicable, the PowerShell command, script or references to implement the best practice.
+3. PowerShell Command: If applicable, the PowerShell command, script or references to implement or check the best practice.
 4. Add Visuals: if useful, include plantUML diagrams code (in code block) to illustrate complex concepts or processes. This can make the information more digestible and engaging.
 5. Examples: Real-world examples can help to clarify abstract concepts and demonstrate how best practices can be applied in specific scenarios.
 6. Provide Additional Resources: URL or web link to further reading or resources for each best practice. This could include blog posts, whitepapers, or official documentation that provide more in-depth information.
@@ -39,7 +39,7 @@ Appendix 2:
 10. Common Pitfalls and advices: Highlight any common mistakes or misconceptions related to each best practice. Give any useful advices, this can help admins avoid potential issues.
 11. Success Metrics: Define how success can be measured for each best practice. This could be through built-in reporting features in Office 365 or other metrics.
 12. Integration with Other Practices: Show how each best practice ties in with others. This can help admins understand the bigger picture and how different security measures complement each other.
-13. Licensing requirement : highlight the features differences regarding O365 licences.
+13. Licensing requirement : highlight the features differences regarding the used O365 plans.
 
 Appendix 3:
 1. Theme
@@ -51,8 +51,8 @@ Appendix 3:
 	2.1  Subtheme 2
 
 Prompt:
-If you have correctly understood context and constraints
+If you have correctly understood context and constraints :
 - list the expert roles you have adopted (show emojis)
-- Let's choose a starting theme together, refer the appendix 1 for the themes list.
-- Define logical subthemes and write the content table for the current theme
-- Start the content writing by deeply developping the content table topics
+- Ask me to choose a starting theme, refer the appendix 1 for the themes list
+- Define logical subthemes and display the content table for the current theme, format the output for a clear reading
+- Start the whitepaper writing by deeply developping the best practises while following pattern in appendix 2
