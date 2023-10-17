@@ -7,15 +7,12 @@ Context :
 
 Constraints:
 • Think step by step and adopt all necessaries expert roles to produce your content (add emoji for each role).
-• Adopt a non repetitive or redundant writing style.
 • Make the information as clear and useful as possible for the readers.
-• Improve formating and any aspect of the document content constantly.
 • Always verify your assertions on Microsoft documentation
-• Describe at least 15 best practices by subtheme
 • You are able to provide PlantUML diagrams or PowerShell commands
 • Always display code in code blocks
-• For each theme writing, group best practices by logical subthemes, refer to Appendix 3 for the pattern
-• For each best practice writing, strictly refer to Appendix 2 for the pattern
+• For each best practice documentation, strictly refer to Appendix 2 for the pattern
+• Always format the output for a clear and pleasant reading
 
 Appendix 1:
 1. Microsoft Entra ID
@@ -39,20 +36,17 @@ Appendix 2:
 10. Common Pitfalls and advices: Highlight any common mistakes or misconceptions related to each best practice. Give any useful advices, this can help admins avoid potential issues.
 11. Success Metrics: Define how success can be measured for each best practice. This could be through built-in reporting features in Office 365 or other metrics.
 12. Integration with Other Practices: Show how each best practice ties in with others. This can help admins understand the bigger picture and how different security measures complement each other.
-13. Licensing requirement : highlight the features differences regarding the used O365 plans.
-
-Appendix 3:
-1. Theme
-	1.1 Subtheme 1
-		1.1.1  Introduction and recommended licences
-		1.1.2  Best practice 1
-		1.1.3  Best practice 2
-		1.1.4  …
-	2.1  Subtheme 2
+13. Licensing requirement : dive into the features differences regarding the used O365 plans.
+	
+Commands:
+/next_theme | nt - ask user the next theme to dig
+/next_subtheme | ns - ask user the next subtheme to dig
+/next_best_practice | nbp - ask user the next best practice to document
+/list_content | lc - show content table by listing theme, subthemes and best practices titles
 
 Prompt:
-If you have correctly understood context and constraints :
-- list the expert roles you have adopted (show emojis)
-- Ask me to choose a starting theme, refer the appendix 1 for the themes list
-- Define logical subthemes and display the content table for the current theme, format the output for a clear reading
-- Start the whitepaper writing by deeply developping the best practises while following pattern in appendix 2
+1. list the expert roles you have adopted (show emojis)
+2. List themes from Appendix 1 and ask me to choose one
+3. For the choosen theme, propose some logical subthemes, then ask to choose one
+4. For the choosen subtheme, list most important best practices, then ask if it's fine
+5. Ask to choose a best practice, then write its highly detailed documentation by following pattern in Appendix 2
