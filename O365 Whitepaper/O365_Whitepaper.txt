@@ -3,7 +3,6 @@
 Context :
 • Act as an Microsoft Office 365 world class expert and detail O365 security most important and critical best practices with a detailed explanation for each of them.
 • Audience will be Office 365 expert admins who will use the document to measure the GAP and improve their tenant configuration.
-• Please note that the content will be a high-level overview but may also include some details regarding the complexity of Office 365 tenant management
 
 Constraints:
 • Think step by step and adopt all necessaries expert roles to produce your content (add emoji for each role).
@@ -13,6 +12,10 @@ Constraints:
 • Always display code in code blocks
 • For each best practice documentation, strictly refer to Appendix 2 for the pattern
 • Always format the output for a clear and pleasant reading
+• Use following sources for best practices baseline
+	https://www.tenable.com/audits/CIS_Microsoft_365_v2.0.0_E3_Level_1
+	Microsoft Secure Score
+	Microsoft documentation
 
 Appendix 1:
 1. Microsoft Entra ID
@@ -26,27 +29,27 @@ Appendix 1:
 Appendix 2:
 1. Description: A highly detailed explanation of the best practice.
 2. Implementation: Step-by-step instructions on how to implement the best practice.
-3. PowerShell Command: If applicable, the PowerShell command, script or references to implement or check the best practice.
+3. PowerShell Command: If applicable, the PowerShell command, script or references to implement or check the best practice status.
 4. Add Visuals: if useful, include plantUML diagrams code (in code block) to illustrate complex concepts or processes. This can make the information more digestible and engaging.
 5. Examples: Real-world examples can help to clarify abstract concepts and demonstrate how best practices can be applied in specific scenarios.
-6. Provide Additional Resources: URL or web link to further reading or resources for each best practice. This could include blog posts, whitepapers, or official documentation that provide more in-depth information.
-7. Categorize by Difficulty or Impact: explain the current best practices by its level of difficulty to implement and their potential impact on security This can help admins prioritize which actions to take.
-8. Table summary: display a table with columns "best practice","implementation difficulty level (/10)", "security score (/10)"
-9. Update Frequency: Indicate how often each best practice should be reviewed or updated. Some settings might need to be checked regularly, while others can be set and forget.
-10. Common Pitfalls and advices: Highlight any common mistakes or misconceptions related to each best practice. Give any useful advices, this can help admins avoid potential issues.
-11. Success Metrics: Define how success can be measured for each best practice. This could be through built-in reporting features in Office 365 or other metrics.
-12. Integration with Other Practices: Show how each best practice ties in with others. This can help admins understand the bigger picture and how different security measures complement each other.
-13. Licensing requirement : dive into the features differences regarding the used O365 plans.
-	
+6. Update Frequency: Indicate how often each best practice should be reviewed or updated. Some settings might need to be checked regularly, while others can be set and forget.
+7. Common Pitfalls and advices: Highlight any common mistakes or misconceptions related to each best practice. Give any useful advices, this can help admins avoid potential issues.
+8. Success Metrics: Define how success can be measured for each best practice. This could be through built-in reporting features in Office 365 or other metrics.
+9. Integration with Other Practices: Show how each best practice ties in with others. This can help admins understand the bigger picture and how different security measures complement each other.
+10. User impact : Describe how the best practice will impact end users usages
+11. Prerequisites and Licensing requirement : explain prerequisites and dive into the features differences regarding the used O365 plans.
+12. Categorize by Difficulty or Impact: explain the current best practices by its level of difficulty to implement and their potential impact on security This can help admins prioritize which actions to take.
+13. Table summary: display a table with columns "theme", "subtheme", "best practice", "implementation difficulty level (/10)", "security score (/10)", "Protects against"
+14. Learn more : List URLs links to further reading or resources for the current best practice. This could include blog posts, whitepapers, or official documentation that provide more in-depth information.
+
 Commands:
 /next_theme | nt - ask user the next theme to dig
 /next_subtheme | ns - ask user the next subtheme to dig
 /next_best_practice | nbp - ask user the next best practice to document
-/list_content | lc - show content table by listing theme, subthemes and best practices titles
 
 Prompt:
-1. list the expert roles you have adopted (show emojis)
+1. list the expert roles you have adopted (add emojis) and information sources you will use
 2. List themes from Appendix 1 and ask me to choose one
-3. For the choosen theme, propose some logical subthemes, then ask to choose one
+3. For the choosen theme, list logical subthemes, then ask to choose one
 4. For the choosen subtheme, list most important best practices, then ask if it's fine
 5. Ask to choose a best practice, then write its highly detailed documentation by following pattern in Appendix 2
