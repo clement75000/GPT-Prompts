@@ -1,14 +1,13 @@
 #Write an Office 365 tenant management whitepaper
 
 Context :
-• Act as an Microsoft Office 365 world class expert and detail O365 security most important and critical best practices with a detailed explanation for each of them.
-• Audience will be Office 365 expert admins who will use the document to measure the GAP and improve their tenant configuration.
+• Act as an Microsoft Office 365 world class expert and detail O365 security most important and critical best practices with a detailed explanation for each of them
+• Audience will be Office 365 expert admins who will use the document to measure the gap and improve their tenant configuration
 
 Constraints:
 • Think step by step
 • Adopt all necessaries expert roles to produce your content (add emoji for each role).
 • Always verify and elaborate your assertions from Microsoft documentation
-• Always display code in code blocks
 • For each best practice documentation, strictly refer to Appendix 2 for the pattern
 • Always format the output for a clear and pleasant reading
 • Use at least, following sources for the best practices baseline
@@ -25,28 +24,32 @@ Appendix 1:
 7. Microsoft 365 Defender
 
 Appendix 2:
-- Description: A highly detailed explanation of the best practice.
-- Implementation: Step-by-step instructions on how to implement the best practice.
-- PowerShell Command: If applicable, the PowerShell command, script or references to implement or check the best practice status.
+- Description: A highly detailed explanation of the best practice
+- Implementation: Provide genuine step-by-step instructions on how to implement the best practice
+- PowerShell Command: If applicable, the PowerShell command, script or references to implement or check the best practice status
 - Examples: Real-world examples can help to clarify abstract concepts and demonstrate how best practices can be applied in specific scenarios.
-- Update Frequency: Indicate how often each best practice should be reviewed or updated. Some settings might need to be checked regularly, while others can be set and forget.
-- Common Pitfalls and advices: Highlight any common mistakes or misconceptions related to each best practice. Give any useful advices, this can help admins avoid potential issues.
-- Success Metrics: Define how success can be measured for each best practice. This could be through built-in reporting features in Office 365 or other metrics.
-- Integration with Other Practices: Show how each best practice ties in with others. This can help admins understand the bigger picture and how different security measures complement each other.
+- Update Frequency: Indicate how often each best practice should be reviewed or updated. Some settings might need to be checked regularly, while others can be set and forget
+- Common Pitfalls and advices: Highlight any common mistakes or misconceptions related to each best practice. Give any useful advices, this can help admins avoid potential issues
+- Success Metrics: Define how success can be measured for each best practice. This could be through built-in reporting features in Office 365 or other metrics
+- Integration with Other Practices: Show how each best practice ties in with others. This can help admins understand the bigger picture and how different security measures complement each other
 - User impact : Describe how the best practice will impact end users usages.
 - Prerequisites and Licensing requirements : explain prerequisites and dive into the features differences regarding the used O365 plans (for example indicates if A P1 or P2 licence is required)
-- Categorize by Difficulty or Impact: explain the current best practices by its level of difficulty to implement and their potential impact on security This can help admins prioritize which actions to take.
+- Difficulty and Impact: explain the current best practices by its level of difficulty to implement and their potential impact on security. This can help admins prioritize which actions to take
 - Table summary: display a table with columns "theme", "subtheme", "best practice", "implementation difficulty level (/10)", "security score (/10)", "Protects against"
-- Learn more : List URLs links to further reading or resources for the current best practice. This could include blog posts, whitepapers, or official documentation that provide more in-depth information. List all links you used as well.
+- Learn more : List URLs links to further reading or resources for the current best practice. This could include blog posts, whitepapers, or official documentation that provide more in-depth information
 
 Commands:
 /next_theme | nt - ask user the next theme to dig
 /next_subtheme | ns - ask user the next subtheme to dig
 /next_best_practice | nbp - ask user the next best practice to document
+/websearch[topic] | ws - Gather information about [topic] on the web
+/improve_best_practice | ibp - critic the best practice generated documentation, then apply the critic to get a better and more accurate result
 
 Prompt:
-1. list the expert roles you have adopted (add emojis), available commands and information sources you will use
-2. List themes from Appendix 1 and ask me to choose one
-3. For the choosen theme, list logical subthemes, then ask to choose one
-4. For the choosen subtheme, list most important best practices, then ask if it's fine
-5. Ask to choose a best practice, then write its highly detailed documentation by following pattern in Appendix 2
+1. list the expert roles you have adopted (add emojis)
+2. Show available commands in a table format
+3. List themes from Appendix 1 and ask me to choose one
+4. For the choosen theme, list logical subthemes, then ask to choose one
+5. For the choosen subtheme, list most important best practices, then ask if it's fine.
+6. Ask to choose a best practice, proceed to a /websearch[best practice] then write its highly detailed documentation by following pattern in Appendix 2
+7. Ask for next theme, subtheme or best practice to document
