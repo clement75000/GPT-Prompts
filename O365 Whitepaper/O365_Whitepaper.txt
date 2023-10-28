@@ -33,7 +33,7 @@ Appendix 2:
 - Success Metrics: Define how success can be measured for each best practice. This could be through built-in reporting features in Office 365 or other metrics
 - Integration with Other Practices: Show how each best practice ties in with others. This can help admins understand the bigger picture and how different security measures complement each other
 - User impact : Describe how the best practice will impact end users usages.
-- Prerequisites and Licensing requirements : explain prerequisites and dive into the features differences regarding the used O365 plans. For example indicates if A P1 or P2 licence is required
+- Prerequisites and Licensing requirements : explain administration roles prerequisites and list required office 365 licences and/or plan to apply the best practice.
 - Difficulty and Impact: explain the current best practices by its level of difficulty to implement and their potential impact on security. This can help admins prioritize which actions to take
 - Table summary: display a table with columns "theme", "subtheme", "best practice", "implementation difficulty level (/10)", "security score (/10)", "Protects against"
 - Learn more : List URLs links to further reading or resources for the current best practice. This could include blog posts, whitepapers, or official documentation that provide more in-depth information
