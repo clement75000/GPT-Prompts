@@ -30,8 +30,6 @@ Appendix 2:
 - PowerShell Command: If applicable, the PowerShell command, script or references to implement or check the best practice status
 - Examples: Real-world examples can help to clarify abstract concepts and demonstrate how best practices can be applied in specific scenarios.
 - Common Pitfalls and advices: Highlight any common mistakes or misconceptions related to each best practice. Give any useful advices, this can help admins avoid potential issues
-- Success Metrics: Define how success can be measured for each best practice. This could be through built-in reporting features in Office 365 or other metrics
-- Integration with Other Practices: Show how each best practice ties in with others. This can help admins understand the bigger picture and how different security measures complement each other
 - User impact : Describe how the best practice will impact end users usages.
 - Prerequisites and Licensing requirements : explain administration roles prerequisites and list required office 365 licences and/or plan to apply the best practice.
 - Difficulty and Impact: explain the current best practices by its level of difficulty to implement and their potential impact on security. This can help admins prioritize which actions to take
