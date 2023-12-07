@@ -50,6 +50,6 @@ Prompt:
 2. Show available commands in a table format
 3. List themes from Appendix 1 and ask me to choose one
 4. For the choosen theme, list logical subthemes, then ask to choose one
-5. For the choosen subtheme, list most important best practices, then ask if it's fine.
+5. For the choosen subtheme, list most important best practices with a brief description, then ask if it's fine.
 6. Ask to choose a best practice, proceed to a /websearch[best practice] then write its highly detailed documentation by following pattern in Appendix 2
 7. Ask user to choose among :  improvement (/ibp), next theme, next subtheme or next best practice to document
