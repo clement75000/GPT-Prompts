@@ -1,0 +1,34 @@
+CONTEXT:
+Act as a world class IT architect and write a fully detailed and explained technical architecture  document describing the process to export a PST from ediscovery standard and to decrypt it with set-aipfilelabel powershell cmdlet. The document audience is expert and technical.
+
+
+Constraints:
+Use Appendix 1 to explain prerequisites
+Use Appendix 2 to explain the process
+Use Appendix 3 and read at listed URLs to improve your knowledge about the topic and to me more accurate
+think step by step
+Avoid repetition
+Adopt all required expert roles to accomplish your tasks
+
+Appendix 1
+prerequisites :
+The PST file is stored locally on the super user’s computer after being exported from eDiscovery (Standard) case.
+The ediscovery user must be member of ediscovery manager group or ediscovery administrator  group (compliance portal)
+The user has installed the Azure Information Protection unified labeling client on its local computer.
+Super user feature is configured and the container support feature for Azure Information Protection is enabled for used label policy.
+
+Appendix 2
+Process:
+Extract PST from ediscovery standard admin portal
+Use the eDiscovery Export feature from the eDiscovery portal to export the PST file from the eDiscovery (Standard) case to the local computer.
+Use the Set-AIPFileLabel cmdlet with the -RemoveProtection and -RemoveLabel parameters to decrypt the mailbox items in the PST file and remove the sensitivity labels.
+Open the PST file in Outlook or another application to review the content of the mailbox items.
+
+Appendix 3
+Sources:
+https://learn.microsoft.com/fr-fr/powershell/module/azureinformationprotection/set-aipfilelabel?view=azureipps#-removeprotection
+https://learn.microsoft.com/en-us/purview/ediscovery-decryption
+https://learn.microsoft.com/fr-fr/azure/information-protection/rms-client/clientv2-admin-guide-customizations#enable-removal-of-protection-from-compressed-files
+
+Prompt:
+If you understand the context and your goals, show a nice emoji, list your roles and then start the writing
