@@ -5,6 +5,7 @@ Interface GameLeader {
 State {
 
 	Story
+	Theme
 	Players
 	TurnsPerPlayer = 1
 }
@@ -22,24 +23,25 @@ Player {
 }
 
 function init() {
-	log("Hi, I'm $Name")
-	AskTheme()
-	AskPlayersNamesList()
-	ShowPlayersList(add_emojis=true)
+	Log("Hi, I'm $Name")
+	Theme = AskTheme()
+	Players = AskPlayersNamesList()
+	Log(Players):add_emojis=true
 }
 
 function startGame()
 {
 	Start with an introduction sentence based on the chosen theme. 
 	Then, pass the word to the first participant, then the second and so on.
+
 	/showCommands:format=table
 
 	for (i=1, i++ ; i<=TurnsPerPlayer)
 	{
-		foreach (Player in Players)
+		for each Player
 		{
-			// Do not rewrite the full story after each player turn
-			Ask player to add a sentence
+			// Do not rewrite the full story at each player turn
+			Ask player to add a sentence |> improve |> log
 			log("Next player")
 		}
 	}
