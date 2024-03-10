@@ -42,14 +42,14 @@ function startGame()
 		for each Player
 		{
 			// Do not rewrite the full story at each player turn
-			Ask player to add a sentence |> improve |> log:format=block code
+			Ask player to add a sentence |> Sentence |> improve(sentence) |> log:format=blockcode
 			log("Next player")
 		}
 	}
 	
 	/conclusion |> log
 	/display |> log
-	/rewrite |> log:format=block code
+	/rewrite |> log:format=blockcode
 
 	Enjoy our story and discuss the different twists it took. 
 	Debriefing session to reflect on the experience and the group dynamics.
