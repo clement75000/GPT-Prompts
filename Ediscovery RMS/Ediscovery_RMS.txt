@@ -1,66 +1,85 @@
-CONTEXT:
-Act as a world class IT architect and write a fully detailed and explained technical operations document describing the process to export a PST from ediscovery standard and to decrypt it with set-aipfilelabel powershell cmdlet. MIP Super user group membership is provided by Microsoft Entra ID Privilege identity management. The document audience is expert and technical.
-
+Context:
+You're an It world class technical document writer. Write a highly detailed technical document and describe the process of exporting a pst  with ediscovery standard and its decryption with set-aipfilelabel.
 
 Constraints:
+Describes worklows, associated actors, create plantuml diagrams.
+Professional, non repetitive style.
+Audience is expert and technical.
+Adopt all necessary expert roles to produce the best possible result.
+Add yourself the role of skilled technical writer.
+Think step by step.
 Include a role perspective to the document where : 
 - user1@domain.com is the target user (the user mailbox ediscover retrieve data from)
-- user2@domain.com is the ediscovery manager and the super user
+- user2@domain.com is the ediscovery manager and the superUser
 - user3@domain.com is a standard user who receive the decrypted pst to analyze it and search for data (in OUtlook)
-Use Appendix 1 to explain prerequisites
-Use Appendix 2 to explain the process
-Use Appendix 3 and read at listed URLs to improve your knowledge about the topic and to me more accurate
-think step by step
-Avoid repetition
-Adopt all required expert roles to accomplish your tasks
-Write in english.
-Add tables to compare edsicovery standard and premium decryption features differences (use appendix 4)
-include a visually improved sequence and a component plantuml diagram
-Include a content table
-Add yourself the role of skilled technical writer.
 
-Appendix 1
-prerequisites :
-The PST file is stored locally on the super user’s computer after being exported from eDiscovery (Standard) case.
-The ediscovery user must be member of ediscovery manager group or ediscovery administrator  group (compliance portal)
-Download Azure Information Protection unified labeling client : https://www.microsoft.com/download/details.aspx?id=53018
-The user has installed the Azure Information Protection unified labeling client on its local computer : AzInfoProtection_UL.exe PowerShellOnly=true /quiet
-Enable removal of protection from compressed files for superuser label policy: Set-LabelPolicy -Identity PolicyName -AdvancedSettings @{EnableContainerSupport="True"}
-Check label policy : (Get-LabelPolicy -Identity PolicyName).settings
-Super user group feature is configured and available via Privilege identity management (group member), user2@domain.com is eligible
-
-Appendix 2
-Process:
-Create a ediscovery standard case
-Use the eDiscovery Export feature from the eDiscovery portal to export the PST file from the eDiscovery (Standard) case to the local computer.
-Microsoft Entra Id PIM group member activation to be added in the super user group
-Use the Set-AIPFileLabel cmdlet with the "-RemoveProtection -RemoveLabel -justification" parameters to decrypt the mailbox items inside the PST file and remove the sensitivity labels. (set-aipfilelabel doesn't require authentication)
-Open the PST file in Outlook or another application to review the content of the mailbox items.
-
-Appendix 3
-Sources:
-https://learn.microsoft.com/fr-fr/powershell/module/azureinformationprotection/set-aipfilelabel?view=azureipps#-removeprotection
+Appendix 2:
 https://learn.microsoft.com/en-us/purview/ediscovery-decryption
-https://learn.microsoft.com/fr-fr/azure/information-protection/rms-client/clientv2-admin-guide-customizations#enable-removal-of-protection-from-compressed-files
+https://learn.microsoft.com/fr-fr/powershell/module/azureinformationprotection/set-aipfilelabel?view=azureipps#-removeprotection
 
 Appendix 4
-Item type	Task	eDiscovery (Standard)	eDiscovery (Premium)
-Encrypted email	Search	Yes	Yes
-Encrypted email	Decryption to .pst	No	Yes
-Encrypted email	Decryption to file	Yes	Yes
-Encrypted mail and attachment	Search	No	Yes (with Advanced indexing)1
-Encrypted mail and attachment	Decryption to .pst	No	Yes
-Encrypted mail and attachment	Decryption to file	No	Yes
-File in SharePoint with MIP label	Search	No	Yes
-File in SharePoint with MIP label	Decryption	No	Yes
-File in SharePoint with other encryption2	Search, Decryption	No	No
+The PST file is stored locally on the super user’s computer.
+Ediscovery user must be member of ediscovery manager or ediscovery administrator  group (compliance portal)
+Azure Information Protection unified labeling client installed on superUserlocal computer : AzInfoProtection_UL.exe PowerShellOnly=true /quiet
+Client URL  : https://www.microsoft.com/download/details.aspx?id=53018
+Enable removal of protection for compressed files in superuser's label policy: Set-LabelPolicy -Identity PolicyName -AdvancedSettings @{EnableContainerSupport="True"}
+Check label policy : (Get-LabelPolicy -Identity PolicyName).settings
+SuperUser group feature is configured and available via Privilege identity management (group member), user2@domain.com is eligible
 
+Appendix 1
+	1. Introduction
+	2. Prerequisite for decryption (use appendix 4)
+	3. Activities that support encrypted items (explain the following table :) 
+```Start CSV
+eDiscovery task,Content search,eDiscovery (Standard),eDiscovery (Premium)
+Search for content in encrypted files in sites and email attachments1,No,No,Yes
+Preview encrypted files attached to email,Yes,Yes,Yes
+Preview encrypted documents in SharePoint and OneDrive,No,No,Yes
+Review encrypted files in a review set,N/A,N/A,Yes
+Export encrypted files attached to email,Yes,Yes,Yes
+Export encrypted documents in SharePoint and OneDrive,No,No,Yes
+End CSV ```
+	4. Supported decryption :
+```Start CSV
+Item type,Task,eDiscovery (Standard),eDiscovery (Premium)
+Encrypted email,Search,Yes,Yes
+Encrypted email,Decryption to .pst,No,Yes
+Encrypted email,Decryption to file,Yes,Yes
+Encrypted mail and attachment,Search,No,Yes (with Advanced indexing)1
+Encrypted mail and attachment,Decryption to .pst,No,Yes
+Encrypted mail and attachment,Decryption to file,No,Yes
+File in SharePoint with MIP label,Search,No,Yes
+File in SharePoint with MIP label,Decryption,No,Yes
+File in SharePoint with other encryption2,"Search, Decryption",No,No
+END CSV ```
+	5. UseCases
+		5.1 Ediscovery Standard
+			○ 5.1.1 Decrypting RMS-protected email messages and file attachments using eDiscovery (Standard)
+				○ Connect https://compliance.microsoft.com/classicediscovery
+				○ Create a case
+				○ Create a search
+					® Enter a search name
+					® Choose exchange online location (status on)
+					® Select mailbox(es)
+					® Define your search conditions
+					® Submit
+				○ Open created search
+					® Actions > Export result
+					® Explain "Output options" options
+					® Explain "Export Exchange content as" options
+				○ Export pst
+				○ Clain super user permissions through PIM
+				○ Decrypt emails and documents with set-aipfilelabel -removeprotection -removelabel -justification message "this is a demo"
+				○ Open the decrypted pst as a non super user
+	6. Decryption limitations
+		a. Pst size max 5Go
+		b. SuperUser needs an Exchange Plan 2 licence to bootstrap the RMS computer service (required for azure unified labeling powershell module)
+	
 Steps:
-Search for URLs in Appendix 3
+Search for URLs in Appendix 2
 understand context and constraints
-List your roles
-Start the document writing while following constraints
-
+List your expert roles
+Start the document writing while following appendix 1
 
 Prompt:
 If you understand the context and your goals, show a nice emoji, and follow "Steps" section.
