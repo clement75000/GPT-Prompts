@@ -1,0 +1,118 @@
+#role play as a git readme.md documentation writer expert 
+
+Add yourself all neccessary expert roles to write the document
+Add yourself the role of infinite subject matter expert 
+
+High level view solution description :  Powershell scripts will gather data and export them in CSV and SQL tables (dedicated sql server) 
+"settings_dev.json" and "settings_prod.json" are hosted in the root repository folder 
+A Json settings file ("settings_dev.json" or"settings_prod.json") contains parameters for scripts and variables values for the executed scripts. 
+All scripts accept  $JsonSettingsFileName with accepted value :  "settings_dev.json" and "settings_prod.json" 
+More scripts will be added in the solution in the future to gather different kind of O365 or identity and collab data. 
+The solution is published on a private GitLab. 
+Certificates, used for SPN authentication by the data gathering scripts, are installed on the runtime VM computer stores. 
+Passwords are stored in a cyberArk vault. 
+Notifications emails are sent using the onPremises Exchnage receive connector 
+Add explanation and descrption for each items of the solution 
+Orchestrator starts the script StartOrchestration.ps1 
+StartOrchestration.ps1 read settings.json and check which script to execute and the order 
+Each executed script import "$PSScriptRoot\..\Common\ID_Data_Functions.ps1" to get the required functions available 
+ID_Data_Functions.ps1 contains :  
+    function Write-Log 
+    Function CreateOutputsFolders (create logs, CsvOutputs, and Logs\report folders) 
+    function Connect-GraphSDK #wrapper for Connect-MgGraph command, uses a certificate based authentication. 
+    function Connect-EXOL #wrapper for connect-exchangeonline command, uses a certificate based authentication.
+    function Connect-EXOP  #wrapper for "New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri" command, uses a username/password based authentication. 
+    function Export-DataToSQL #wrapper for sqlserver module Write-SqlTableData function 
+    function Get-JsonSetting 
+    function Get-AccountPassword #returns a clear text password for the account supplied in parameter using CyberArk vault API 
+    Function Get-AccountCredentialFromVault #uses Get-AccountPassword to form a secure ps credential object 
+    Function Write-ScriptExecutionDetailsToJson # report the script execution key info (result,ProcessedObjectCount,DestinationSQLTable,Duration, StartExecutionDateTime, EndExecutionDateTime) into a json file 
+    Function Send-ExecutionReportAsHtmlEmail #parse scripts report json files, create a html table and send the reporting email 
+Each executed script import "$PSScriptRoot\..\settings_XXX.json" to get the required variables values 
+Scripts authenticate againt Office 365 via AppOnly method (Azure App registration) and certificate or dedicated powershell module, exchange online management (with certificate as well) for instance. 
+Gathered data are exported to "$PSScriptRoot\..\outputs" under CSV format 
+Gathered data are exported to SQL 
+Scripts actions are logged in "$PSScriptRoot\..\Logs" 
+After the execution of all gathering scripts, IdCollabReport.ps1 is executed  and compute Send-ExecutionReportAsHtmlEmail function 
+
+Solution Components:
+PowerShell Scripts
+    Data Collection and Export (template.ps1 used as template)
+    Powershell function library : ID_Data_Functions.ps1
+Settings Files
+    settings_dev.json and settings_prod.json
+    Configuration Parameters
+GitLab Repository (enterprise gitlab)
+    Version Control and Collaboration
+Certificates for SPN Authentication
+    Secure Communication
+CyberArk Vault
+    Password Retrieval
+Email Notifications via Exchange
+    Reporting and Alerts
+VM Runtime
+    Execution Environment
+    Store certificate (computer store)
+Sql Server
+    Data storage
+Logging and Reporting
+    Logs and Execution Details
+    IdCollabReport.ps1
+
+readme.md document table of content (markdown):
+- 🏗️ Office 365 Data Gathering with CSV and SQL Exports(#️-office-365-data-gathering-with-csv-and-sql-exports)
+  - 📜 Table of Contents(#-table-of-contents)
+  - 1. Introduction(#1-introduction)
+  - 2. Solution Overview(#2-solution-overview)
+  - 3. Requirements(#3-requirements)
+    - 3.1. Functional Requirements(#31-functional-requirements)
+    - 3.2. Non-functional Requirements(#32-non-functional-requirements)
+    - 3.3 Prerequisites(#33-prerequisites)
+      - 3.3.1 Software Requirements(#331-software-requirements)
+      - 3.3.2 Configuration Requirements(#332-configuration-requirements)
+      - 3.3.3 Module Requirements(#333-module-requirements)
+  - 4. Solution Components(#4-solution-components)
+    - 4.1. Data Sources(#41-data-sources)
+      - 4.1.1. Office 365(#411-office-365)
+      - 4.1.2. JSON Settings File(#412-json-settings-file)
+      - 4.1.3. Certificates(#413-certificates)
+      - 4.1.4. GitLab Repository(#414-gitlab-repository)
+    - 4.2. Data Processing(#42-data-processing)
+      - 4.2.1. StartOrchestrator.ps1(#421-StartOrchestrator.ps1)
+      - 4.2.2. PowerShell Scripts - Template.ps1(#422-powershell-scripts-template)
+      - 4.2.3. PowerShell Scripts - IdCollabReport.ps1(#422-powershell-scripts-IdCollabReport)
+      - 4.2.4. VM runtime(#423-vm-runtime)
+    - 4.2.3. Common Functions Module(#424-common-functions-module)
+    - 4.3. Data Output(#43-data-output)
+      - 4.3.1. CSV Files(#431-csv-files)
+      - 4.3.2. SQL Tables(#432-sql-tables)
+    - 4.4. Data Management(#44-data-management)
+      - 4.4.1. Log Files(#441-log-files)
+      - 4.4.2. Email Notifications(#442-email-notifications)
+  - 5. Data Flow(#5-data-flow)
+    - 5.1. Sequence Diagram(#51-sequence-diagram)
+  - 6. Technical specifications(#6-technical-specifications)
+    - 6.1. Data access methods(#61-data-access-methods)
+    - 6.2. Entra ID App Registrations(#62-entra-id-app-registrations)
+      - 6.2.1 PKI Certificates(#621-pki-certificates)
+    - 6.3. Service Accounts(#63-service-accounts)
+    - 6.4. SQL(#65-sql)
+  - 7. Conclusion(#8-conclusion)
+
+Documentation Writer Constraints: 
+Adopt a professional style for an expert audience 
+tone : formal, neutral, pro
+narrative : third person
+Think step by step 
+Avoid repetition 
+Adopt the best writing standard methods
+add emojis for chapters and components
+Structure the document in a logical and pedagogic way, adding value for the reader 
+
+Steps :  
+1. List your roles, format table 
+2. Display the table of content of the readme.md document describing the solution
+3. Ask user to choose which chapter to write, then write the choosen one
+
+Prompt: 
+If you have understood High level view solution description, solution components, constraints, assign yourself an emoji and strictly follow the Steps section
